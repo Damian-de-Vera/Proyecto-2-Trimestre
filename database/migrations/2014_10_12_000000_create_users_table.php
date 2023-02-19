@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger('admin');
-            $table->tinyInteger('validated');
-            $table->tinyInteger('blocked');
-            $table->double('coupon');
+            $table->tinyInteger('admin')->nullable();
+            $table->tinyInteger('validated')->nullable();
+            $table->tinyInteger('blocked')->nullable();
+            $table->double('coupon')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
