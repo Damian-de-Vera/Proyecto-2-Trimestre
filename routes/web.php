@@ -23,6 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 
 Auth::routes();
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
