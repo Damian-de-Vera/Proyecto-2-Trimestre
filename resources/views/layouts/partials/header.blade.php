@@ -10,30 +10,35 @@
                         <div class="row">
                             <!-- Departure -->
                             <div class="col" style="flex:1.5 0 0%">
-                                <input class="form-control form-control-lg" id="departure" name="departure"
-                                    type="text" placeholder="{{ __('Leaving from') }}" />
+                                <input class="form-control form-control-lg" id="departure" name="departure" type="text"
+                                    placeholder="{{ __('Leaving from') }}" />
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Departure is required.') }}</div>
+                                    {{ __('Departure is required.') }}
+                                </div>
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Departure is not valid.') }}</div>
+                                    {{ __('Departure is not valid.') }}
+                                </div>
                             </div>
                             <!-- Destination -->
                             <div class="col" style="flex:1.5 0 0%">
                                 <input class="form-control form-control-lg" id="destination" name="destination"
                                     type="text" placeholder="{{ __('Going to') }}" />
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Destination is required.') }}</div>
+                                    {{ __('Destination is required.') }}
+                                </div>
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Destination is not valid.') }}</div>
+                                    {{ __('Destination is not valid.') }}
+                                </div>
                             </div>
                             <!-- Date-->
                             <div class="col" style="flex:1 0 0%">
-                                <input class="form-control form-control-lg" id="date" name="date"
-                                    type="date" />
+                                <input class="form-control form-control-lg" id="date" name="date" type="date" />
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Date is required.') }}</div>
+                                    {{ __('Date is required.') }}
+                                </div>
                                 <div class="invalid-feedback text-white">
-                                    {{ __('Date is not valid.') }}</div>
+                                    {{ __('Date is not valid.') }}
+                                </div>
                             </div>
 
                             <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
