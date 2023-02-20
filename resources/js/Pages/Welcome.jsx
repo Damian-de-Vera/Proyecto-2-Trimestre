@@ -9,10 +9,11 @@ import Footer from '@/components/Footer'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Welcome({ user }) {
+export default function Welcome(props) {
+
     return (
         <>
-            <Nav />
+            <Nav user={props.user} logout={props.logout} />
             <Header />
             <IconsGrid />
             <Showcase />
@@ -23,4 +24,5 @@ export default function Welcome({ user }) {
 
         </>
     )
+
 }

@@ -23,7 +23,9 @@ Auth::routes(['verify' => true]); //Activa la verificación en las rutas para la
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/welcomereact', function () {
-    $user = new User();
-    $user->name = "Mr. Bean";
-    return Inertia::render('Welcome', ['user' => $user]);
+    $user = Auth::user();
+    $logout = Auth::logout();
+
+
+    return Inertia::render('Welcome', ['user' => $user, 'logout' => $logout]);
 });
