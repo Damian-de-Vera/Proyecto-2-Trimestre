@@ -9,11 +9,10 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
                     @endif
-                    <h1>nashe</h1>
 
                     {{ __('You are logged in!') }}
                 </div>
