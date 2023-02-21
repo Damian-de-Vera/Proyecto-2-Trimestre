@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Dropdown from 'react-bootstrap/Dropdown'
 import { router } from '@inertiajs/react'
+import { Link } from '@inertiajs/react'
 
 class Nav extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props.logout);
         console.log(props.user);
+
     }
 
 
@@ -17,12 +18,9 @@ class Nav extends React.Component {
 
 
         let user = this.props.user;
-        const submit = (e) => {
-            e.preventDefault();
-            document.getElementById('logout-form').submit()
-        }
         return (
             < nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" >
+
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">MoviFP Sostenible</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -65,12 +63,9 @@ class Nav extends React.Component {
                                             <Dropdown.Item  > <a href="#" class="  bi bi-chat" > Mensajes</a></Dropdown.Item>
                                             <Dropdown.Item  > <a href="#" class=" bi bi-credit-card" > Pagos</a></Dropdown.Item>
                                             <Dropdown.Item  > <a href="#" class=" bi bi-person-circle" > Perfil</a></Dropdown.Item>
-                                            <Dropdown.Item  > <a class=" bi bi-door-closed" onClick={submit}>                                                Cerrar sesión</a>
+                                            <Dropdown.Item>
+                                                <Link id="refresh" as="button" href="/logout" method="post" className='bi bi-door-closed'> Log out</Link>
                                             </Dropdown.Item>
-                                            <form id="logout-form" action="/logout" method="POST" class="d-none">
-
-                                            </form>
-
                                         </Dropdown.Menu>
                                     </Dropdown>
 

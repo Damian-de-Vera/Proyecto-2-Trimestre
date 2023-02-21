@@ -24,8 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 
 Route::get('/welcomereact', function () {
     $user = Auth::user();
-    $logout = Auth::logout();
 
 
-    return Inertia::render('Welcome', ['user' => $user, 'logout' => $logout]);
+    return Inertia::render('Welcome', ['user' => $user,]);
 });

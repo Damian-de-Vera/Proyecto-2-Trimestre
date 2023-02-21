@@ -7,22 +7,23 @@ import CallToAction from '@/components/CallToAction'
 import Footer from '@/components/Footer'
 
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Welcome(props) {
 
     return (
-        <>
-            <Nav user={props.user} logout={props.logout} />
+        <div>
+            <Nav user={props.user} />
             <Header />
             <IconsGrid />
             <Showcase />
             <Testimonials />
             <CallToAction />
             <Footer />
+        </div>
 
 
-        </>
     )
 
 }
