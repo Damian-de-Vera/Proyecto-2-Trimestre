@@ -21,8 +21,6 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]); //Activa la verificación en las rutas para laravel/ui
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
-<<<<<<< main
-=======
 
 Route::get('/welcomereact', function () {
     $user = Auth::user();
@@ -30,4 +28,3 @@ Route::get('/welcomereact', function () {
 
     return Inertia::render('Welcome', ['user' => $user,]);
 });
->>>>>>> Damian
