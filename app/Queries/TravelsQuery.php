@@ -11,9 +11,16 @@ class TravelsQuery
 
     public function getAll()
     {
+        $result = Travel::with('user')->latest('updated_at')->get();
+        return $result;
+    }
+
+
+    public function getAllByOrigin($origin)
+    {
         $user = new Travel();
 
-        $result = Travel::with('user')->get();
+        $result = Travel::with('user')->latest('updated_at')->where('origin', 'like', $origin)->get();
         return $result;
     }
 }

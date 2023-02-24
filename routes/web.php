@@ -39,7 +39,7 @@ Route::get('/publicar', function () {
     }
 });
 
-Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index'])->name('buscar');
+Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
 Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');
 
