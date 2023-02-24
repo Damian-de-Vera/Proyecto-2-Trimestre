@@ -25,6 +25,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 Route::get('/welcomereact', function () {
     $user = Auth::user();
 
-
     return Inertia::render('Welcome', ['user' => $user,]);
+});
+
+
+Route::get('/loginReact', function () {
+    return Inertia::render('LoginPage');
+});
+
+Route::get('/registerReact', function () {
+    return Inertia::render('RegisterPage');
 });

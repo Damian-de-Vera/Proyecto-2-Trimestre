@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import Dropdown from 'react-bootstrap/Dropdown'
-import { router } from '@inertiajs/react'
 import { Link } from '@inertiajs/react'
 
 class Nav extends React.Component {
@@ -31,7 +29,7 @@ class Nav extends React.Component {
                     <div class=" collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto ">
                             <li class="nav-item">
-                                <a class="nav-link mx-2 active bi bi-house" aria-current="page" href="/">Home</a>
+                                <Link href="/welcomereact" aria-current="page" class="nav-link mx-2 active bi bi-house"> Home</Link>
                             </li>
                             <li class="nav-item">
 
@@ -44,10 +42,12 @@ class Nav extends React.Component {
 
                             {user == null &&
                                 <div><li class="nav-item">
-                                    <a class="nav-link mx-2 bi bi-door-open" href="/login">Iniciar sesión</a>
+                                    <Link href="/loginReact" class='nav-link mx-2 bi bi-door-open'>Iniciar sesión</Link>
+
                                 </li>
                                     <li class="nav-item">
-                                        <a class="nav-link mx-2 bi bi-check-circle" href="/register">Registrarse</a>
+                                        <Link href="/registerReact" class='nav-link mx-2 bi bi-check-circle'>Registrarse</Link>
+
                                     </li></div>
                             }
                             {user != null &&
@@ -64,7 +64,7 @@ class Nav extends React.Component {
                                             <Dropdown.Item  > <a href="#" class=" bi bi-credit-card" > Pagos</a></Dropdown.Item>
                                             <Dropdown.Item  > <a href="#" class=" bi bi-person-circle" > Perfil</a></Dropdown.Item>
                                             <Dropdown.Item>
-                                                <Link id="refresh" as="button" href="/logout" method="post" className='bi bi-door-closed'> Log out</Link>
+                                                <Link as="button" href="/logout" method="post" aria-current="page" className='bi bi-door-closed'> Log out</Link>
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
