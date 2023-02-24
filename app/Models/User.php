@@ -23,6 +23,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
     ];
 
+    public function travels()
+    {
+        return $this->hasMany(Travel::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

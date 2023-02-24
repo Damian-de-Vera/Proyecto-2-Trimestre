@@ -6,7 +6,6 @@ class Nav extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props.user);
 
     }
 
@@ -32,11 +31,10 @@ class Nav extends React.Component {
                                 <Link href="/welcomereact" aria-current="page" class="nav-link mx-2 active bi bi-house"> Home</Link>
                             </li>
                             <li class="nav-item">
-
-                                <a class="nav-link mx-2 bi bi-search" href="#"> Buscar</a>
+                                <Link href="/buscar" aria-current="page" class="nav-link mx-2 bi bi-search"> Buscar</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-2 bi bi-car-front" href="#">Publicar un viaje</a>
+                                <Link href="/publicar" aria-current="page" class="nav-link mx-2 bi bi-car-front"> Publicar un viaje</Link>
                             </li>
 
 
@@ -64,7 +62,7 @@ class Nav extends React.Component {
                                             <Dropdown.Item  > <a href="#" class=" bi bi-credit-card" > Pagos</a></Dropdown.Item>
                                             <Dropdown.Item  > <a href="#" class=" bi bi-person-circle" > Perfil</a></Dropdown.Item>
                                             <Dropdown.Item>
-                                                <Link as="button" href="/logout" method="post" aria-current="page" className='bi bi-door-closed'> Log out</Link>
+                                                <Link href="/logout" method="post" aria-current="page" className='bi bi-door-closed'> Log out</Link>
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
