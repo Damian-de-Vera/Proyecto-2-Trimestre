@@ -20,18 +20,26 @@ class TravelsController extends Controller
     {
         $query = new TravelsQuery();
         $user = Auth::user();
-
-        $origin = request()->exists('origin');
+        $origin = "";
+        $destination = "";
         if (isset($_GET["origin"])) {
             $origin = htmlspecialchars($_GET["origin"]);
         }
+        if (isset($_GET["destination"])) {
+            $destination = htmlspecialchars($_GET["destination"]);
+        }
 
         //Queries
-        if ($origin) {
+        if ($destination && $origin) {
+            $travels = $query->getAllByDestinationAndOrigin($destination, $origin);
+            return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
+        } else if ($origin) {
             $travels = $query->getAllByOrigin($origin);
             return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
+        } else if ($destination) {
+            $travels = $query->getAllByDestination($destination);
+            return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
         } else {
-
             $travels = $query->getAll();
             return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
         }

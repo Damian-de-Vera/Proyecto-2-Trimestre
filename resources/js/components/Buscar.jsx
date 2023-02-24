@@ -7,12 +7,14 @@ export default function Buscar(props) {
     const { errors } = usePage().props
 
     const [values, setForm] = useState({
-        origin: ""
+        origin: "",
+        destination: "",
     })
 
     function handleChange(e) {
         const key = e.target.id;
         const value = e.target.value
+
         setForm(values => ({
             ...values,
             [key]: value,
@@ -27,9 +29,12 @@ export default function Buscar(props) {
     return (
 
         <div>
+            <h1>Busquedas con filtro:</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="origin">Origen</label>
                 <input id="origin" value={values.origin} onChange={handleChange} />
+                <label htmlFor="destination">Destino</label>
+                <input id="destination" value={values.destination} onChange={handleChange} />
                 <button type="submit">Buscar</button>
             </form>
             {rutas.map((ruta, index) => {
