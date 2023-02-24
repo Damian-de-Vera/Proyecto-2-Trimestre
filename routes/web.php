@@ -16,7 +16,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+
+    return Inertia::render('Welcome', ['user' => $user,]);
 });
 
 Auth::routes(['verify' => true]); //Activa la verificación en las rutas para laravel/ui
@@ -27,6 +29,19 @@ Route::get('/welcomereact', function () {
 
     return Inertia::render('Welcome', ['user' => $user,]);
 });
+
+Route::get('/publicar', function () {
+    $user = Auth::user();
+    if ($user != null) {
+        return Inertia::render('PublicarPage', ['user' => $user,]);
+    } else {
+        return Inertia::render('LoginPage');
+    }
+});
+
+Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index'])->name('buscar');
+
+Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');
 
 
 Route::get('/loginReact', function () {

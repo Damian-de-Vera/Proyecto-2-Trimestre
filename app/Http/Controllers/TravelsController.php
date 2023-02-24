@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Travel;
+use App\Queries\TravelsQuery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Validator;
 
 class TravelsController extends Controller
 {
@@ -14,7 +18,10 @@ class TravelsController extends Controller
      */
     public function index()
     {
-        //
+        $query = new TravelsQuery();
+        $user = Auth::user();
+        $travels = $query->getAll();
+        return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
     }
 
     /**
@@ -35,7 +42,20 @@ class TravelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Travel::create($request->all());
+        $user = Auth::user();
+
+        return Inertia::render('Welcome', ['user' => $user,]);
+    }
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'origin' => ['required', 'string', 'max:255'],
+            'destination' => ['required', 'string', 'max:255'],
+            'date' => ['required'],
+            'hour' => ['required'],
+            'seats' => ['required', 'number', 'max:2']
+        ]);
     }
 
     /**

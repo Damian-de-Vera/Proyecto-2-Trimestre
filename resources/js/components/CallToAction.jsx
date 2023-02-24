@@ -17,7 +17,7 @@ function CallToAction() {
                         <form class="form-subscribe" id="contactFormFooter">
 
                             <div class="row">
-                                <a href="{{ route('register') }}" class="btn btn-primary btn-lg" role="button">Sign up now!</a>
+                                <a href="/loginReact" class="btn btn-primary btn-lg" role="button">Sign up now!</a>
                             </div>
                         </form>
                     </div>

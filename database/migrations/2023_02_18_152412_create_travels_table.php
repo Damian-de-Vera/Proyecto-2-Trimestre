@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('users_id'); //Foránea
+
             $table->string("origin", 255);
             $table->string("destination", 255);
             $table->date("date");
             $table->time("hour");
             $table->tinyInteger("seats");
-            $table->unsignedBigInteger("user_id");
+            $table->unsignedBigInteger("user_id"); //Foránea
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
