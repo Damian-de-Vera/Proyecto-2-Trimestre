@@ -39,9 +39,19 @@ Route::get('/publicar', function () {
     }
 });
 
+Route::get('/perfil', function () {
+    $user = Auth::user();
+    if ($user != null) {
+        return Inertia::render('PerfilPage', ['user' => $user,]);
+    } else {
+        return Inertia::render('LoginPage');
+    }
+});
+
 Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
 Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');
+Route::post('updateUser', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
 
 
 Route::get('/loginReact', function () {
