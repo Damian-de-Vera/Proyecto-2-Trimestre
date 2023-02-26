@@ -17,7 +17,6 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     $user = Auth::user();
-
     return Inertia::render('Welcome', ['user' => $user,]);
 });
 
@@ -38,6 +37,7 @@ Route::get('/publicar', function () {
         return Inertia::render('LoginPage');
     }
 });
+
 
 Route::get('/perfil', function () {
     $user = Auth::user();
