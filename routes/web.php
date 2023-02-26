@@ -48,6 +48,9 @@ Route::get('/perfil', function () {
     }
 });
 
+Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('reservar');
+
+
 Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
 Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');

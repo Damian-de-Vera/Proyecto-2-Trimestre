@@ -11,8 +11,6 @@ export default function PublicarPage(props) {
             <Buscar user={props.user} travel={props.travel} />
             <Footer />
         </div>
-
-
     )
 
 }
