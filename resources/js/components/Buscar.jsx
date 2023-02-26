@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
+import Reservar from '@/components/Reservar';
 
 export default function Buscar(props) {
     const { errors } = usePage().props
@@ -46,7 +47,7 @@ export default function Buscar(props) {
                         <h2>Hora: {ruta.hour}</h2>
                         <h2>Asientos: {ruta.seats}</h2>
                         <h2>Conductor: {ruta.user.name}</h2>
-
+                        <Reservar user={props.user} travel={ruta} />
                         <hr />
                     </div>
                 );
