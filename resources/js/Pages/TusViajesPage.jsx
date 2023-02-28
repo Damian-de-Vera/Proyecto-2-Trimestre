@@ -9,7 +9,7 @@ export default function TusViajesPage(props) {
     return (
         <div>
             <Nav user={props.user} />
-            <TusViajes user={props.user} bookings={props.bookings}  />
+            <TusViajes user={props.user} bookings={props.bookings} />
             <Footer />
         </div>
 
