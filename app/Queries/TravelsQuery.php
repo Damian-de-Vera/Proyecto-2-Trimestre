@@ -34,4 +34,10 @@ class TravelsQuery
         $result = Travel::with('user')->latest('updated_at')->where('destination', 'like', $destination)->where('origin', 'like', $origin)->get();
         return $result;
     }
+
+    public function getAllByDate($date)
+    {
+        $result = Travel::with('user')->latest('updated_at')->where('date', 'like', $date)->get();
+        return $result;
+    }
 }

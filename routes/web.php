@@ -53,7 +53,7 @@ Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'sto
 Route::get('misViajes', [App\Http\Controllers\BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('misViajes');
 
 
-Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index']);
+Route::get('/buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
 Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');
 Route::post('updateUser', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
