@@ -16,10 +16,12 @@ class BookingController extends Controller
     {
         $query = new BookingsQuery();
         $user = Auth::user();
-        $bookings = $query->getAll();
+        $id = $user->id;
+        $bookings = $query->getAllByUser($id); //devuelve todas las reservas del usuario en concreto
+        $reserva = $query->getAll($id); //devuelve la reserva en cuestión
         // dd($bookings);
 
-        return Inertia::render('TusViajesPage', ['user' => $user, 'bookings' => $bookings]);
+        return Inertia::render('TusViajesPage', ['user' => $user, 'bookings' => $bookings, 'reserva' => $reserva]);
     }
 
 
@@ -27,6 +29,12 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         Booking::create($request->all());
+        return back();
+    }
+
+    public function delete(Request $request)
+    {
+        Booking::where('id', $request->input('id'))->delete();
         return back();
     }
 }

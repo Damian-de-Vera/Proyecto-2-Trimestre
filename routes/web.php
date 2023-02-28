@@ -57,6 +57,7 @@ Route::get('/buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
 Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'store'])->middleware(['auth', 'verified'])->name('publicar');
 Route::post('updateUser', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
+Route::post('cancelarViaje', [App\Http\Controllers\BookingController::class, 'delete'])->middleware(['auth', 'verified'])->name('delete');
 
 
 Route::get('/loginReact', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Queries;
 
+use App\Models\Booking;
 use App\Models\Travel;
 use App\Models\User;
 
@@ -14,9 +15,15 @@ class BookingsQuery
     //     return $result;
     // }
 
-    public function getAll()
+    public function getAllByUser($id)
     {
-        $result = User::with('travel')->latest('updated_at')->get();
+        $result = User::with('travel')->where('id', $id)->latest('updated_at')->get();
+        return $result;
+    }
+
+    public function getAll($id)
+    {
+        $result = Booking::where('user_id', $id)->latest('updated_at')->get();
         return $result;
     }
 }
