@@ -7,7 +7,7 @@ import { router, usePage } from '@inertiajs/react'
 function Reservar(props) {
 
     const [values, setForm] = useState({
-        users_id: props.user.id,
+        user_id: props.user.id,
         travel_id: props.travel.id
     })
 
@@ -28,7 +28,7 @@ function Reservar(props) {
         
                             <form method="POST" onSubmit={handleSubmit}>
                                     <div class="col-md-6">
-                                        <input id="users_id" value={values.users_id} onChange={handleChange}  type="hidden" class="form-control" name="users_id" required autocomplete="users_id" />
+                                        <input id="user_id" value={values.user_id} onChange={handleChange}  type="hidden" class="form-control" name="user_id" required autocomplete="user_id" />
                                     </div>
 
                                     <div class="col-md-6">

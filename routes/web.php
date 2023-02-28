@@ -50,14 +50,8 @@ Route::get('/perfil', function () {
 
 Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('reservar');
 
-Route::get('/misViajes', function () {
-    $user = Auth::user();
-    if ($user != null) {
-        return Inertia::render('TusViajesPage', ['user' => $user,]);
-    } else {
-        return Inertia::render('LoginPage');
-    }
-});
+Route::get('misViajes', [App\Http\Controllers\BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('misViajes');
+
 
 Route::get('buscar', [App\Http\Controllers\TravelsController::class, 'index']);
 
