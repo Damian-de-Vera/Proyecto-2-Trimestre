@@ -9,6 +9,13 @@ class TravelsQuery
 {
 
 
+    public function getById($userId, $travelId)
+    {
+        $result = Travel::with('user')->where('user_id', $userId)->where('id', $travelId)->latest('updated_at')->pluck('id');
+
+        return $result->all();
+    }
+
     public function getAll()
     {
         $result = Travel::with('user')->latest('updated_at')->get();
