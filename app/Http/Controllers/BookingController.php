@@ -15,7 +15,7 @@ class BookingController extends Controller
     public function index()
     {
         $query = new BookingsQuery();
-        $user = Auth::id();
+        $user = Auth::user();
         $bookings = $query->getAll();
         // dd($bookings);
 
