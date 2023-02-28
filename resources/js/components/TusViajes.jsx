@@ -1,12 +1,12 @@
 import React from 'react';
 
+import CancelarReserva from '@/components/CancelarReserva';
+
 
 export default function TusViajes(props) {
 
 
-
     let bookings = props.bookings;
-    console.log(bookings);
     return (
 
         <div>
@@ -18,8 +18,6 @@ export default function TusViajes(props) {
                             <div class="row ">
                                 {booking.travel.map((viaje, indice) => {
                                     return (
-
-
                                         <div class="col-3  my-3" key={indice}>
                                             <div class="card " >
                                                 <div class="card-body">
@@ -29,6 +27,8 @@ export default function TusViajes(props) {
                                                     <p class="card-text">Hora: {viaje.hour} </p>
                                                     <p class="card-text">Asientos: {viaje.seats} </p>
                                                     {/* <p class="card-text">Conductor: {booking.user.name}</p> */}
+                                                    <CancelarReserva id={props.reserva[indice].id
+                                                    } />
 
 
                                                 </div>
