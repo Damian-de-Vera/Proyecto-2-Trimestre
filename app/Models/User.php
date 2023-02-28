@@ -30,7 +30,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function travel()
     {
-        return $this->belongsToMany(Travel::class);
+        return $this->belongsToMany(Travel::class, 'bookings');
     }
 
 

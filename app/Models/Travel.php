@@ -12,6 +12,7 @@ class Travel extends Model
     protected $fillable = [
         'origin', 'destination', 'date', 'hour', 'seats', 'user_id'
     ];
+    protected $table = 'travels';
 
     public function user()
     {
@@ -20,6 +21,6 @@ class Travel extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'bookings');
     }
 }
