@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Travel;
 use App\Queries\BookingsQuery;
+use App\Queries\TravelsQuery;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,8 +30,16 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
-        Booking::create($request->all());
-        return back();
+        $query = new TravelsQuery();
+        $comprobar = $query->getById($request->input('user_id'), $request->input('travel_id'));
+        if (!empty($comprobar)) {
+
+            return back();
+        } else {
+            Booking::create($request->all());
+
+            return back();
+        }
     }
 
     public function delete(Request $request)
