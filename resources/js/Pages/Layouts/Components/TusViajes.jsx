@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePage } from '@inertiajs/react'
 
 import CancelarReserva from '@/Pages/Layouts/Components/CancelarReserva';
 import NoViajes from '@/Pages/Layouts/Components/NoViajes';
@@ -6,13 +7,16 @@ import NoViajes from '@/Pages/Layouts/Components/NoViajes';
 
 export default function TusViajes(props) {
 
+    const { flash } = usePage().props
 
     let bookings = props.bookings;
     console.log(bookings[0].travel);
     return (
 
         <div>
-
+            {flash.message && (
+                <div class="alert">{flash.message}</div>
+            )}
             {bookings.map((booking, index) => {
                 return (
 
