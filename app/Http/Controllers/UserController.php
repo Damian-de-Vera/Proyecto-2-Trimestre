@@ -82,8 +82,16 @@ class UserController extends Controller
         $currentUser = Auth::user();
         $query = new UserQuery();
         $result = $query->updateUser($request, $currentUser);
-        return Inertia::render('PerfilPage', ['user' => $result,]);
+        return Inertia::render('PerfilPage', ['user' => $result]);
     }
+
+    public function avatar(Request $request)
+    {
+        $currentUser = Auth::user();
+        $query = new UserQuery();
+        $result = $query->updateAvatar($request, $currentUser);
+    }
+
 
 
     /**

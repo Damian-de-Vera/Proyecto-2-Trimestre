@@ -28,6 +28,7 @@ function Perfil(props) {
         router.post('/updateUser', values)
     }
     return (
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -43,9 +44,6 @@ function Perfil(props) {
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} required autocomplete="name" autofocus />
                                         {errors.name && <div><strong>{errors.name}</strong></div>}
-
-
-
 
                                     </div>
                                 </div>
