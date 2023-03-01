@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
+
 use App\Models\Booking;
 use App\Models\Travel;
 use App\Queries\BookingsQuery;
@@ -24,7 +26,6 @@ class BookingController extends Controller
 
 
         // dd($bookings);
-
         return Inertia::render('TusViajesPage', ['user' => $user, 'bookings' => $bookings, 'reserva' => $reserva]);
     }
 
@@ -38,6 +39,8 @@ class BookingController extends Controller
 
             return back();
         } else {
+            Session::flash('message', 'se ha reservado correctamente!');
+
             Booking::create($request->all());
 
             return back();

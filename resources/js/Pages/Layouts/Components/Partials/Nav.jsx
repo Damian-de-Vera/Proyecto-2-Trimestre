@@ -19,7 +19,6 @@ class Nav extends React.Component {
 
 
 
-        console.log(user);
         return (
             < nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" >
 

@@ -7,14 +7,15 @@ import Reservar from '@/Pages/Layouts/Components/Reservar';
 
 
 export default function Buscar(props) {
-    const { errors } = usePage().props
+    const { flash } = usePage().props
+
+    console.log(flash);
     let user = props.user;
 
 
     const [values, setForm] = useState({
         date: ""
     })
-
 
     function handleChange(e) {
         const key = e.target.id;
@@ -37,12 +38,16 @@ export default function Buscar(props) {
 
 
         <div>
+            {flash.message && (
+                <div class="alert">{flash.message}</div>
+            )}
             <h1>Busquedas con filtro:</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="date">Fecha</label>
                 <input id="date" type="date" value={values.date} onChange={handleChange} />
                 <button type="submit">Buscar</button>
             </form>
+
             {rutas.map((ruta, index) => {
                 return (
                     <div key={index}>
