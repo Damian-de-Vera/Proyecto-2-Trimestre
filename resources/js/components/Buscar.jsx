@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@inertiajs/react'
 
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
@@ -6,6 +7,7 @@ import Reservar from '@/components/Reservar';
 
 export default function Buscar(props) {
     const { errors } = usePage().props
+    let user = props.user;
 
     const [values, setForm] = useState({
         origin: "",
@@ -47,7 +49,14 @@ export default function Buscar(props) {
                         <h2>Hora: {ruta.hour}</h2>
                         <h2>Asientos: {ruta.seats}</h2>
                         <h2>Conductor: {ruta.user.name}</h2>
-                        <Reservar user={props.user} travel={ruta} />
+                        {user == null &&
+
+                            <Link href="/loginReact" class='btn btn-primary'>Reservar</Link>
+                        }
+                        {user != null &&
+
+                            <Reservar user={props.user} travel={ruta} />
+                        }
                         <hr />
                     </div>
                 );

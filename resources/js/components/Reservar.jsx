@@ -25,24 +25,24 @@ function Reservar(props) {
         router.post('/reservarRuta', values)
     }
     return (
-        
-                            <form method="POST" onSubmit={handleSubmit}>
-                                    <div class="col-md-6">
-                                        <input id="user_id" value={values.user_id} onChange={handleChange}  type="hidden" class="form-control" name="user_id" required autocomplete="user_id" />
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <input id="travel_id" value={values.travel_id} onChange={handleChange}  type="hidden" class="form-control" name="travel_id" required autocomplete="travel_id" />
-                                    </div>
-                    
-                                <div class="row mb-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                           Reservar
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+        <form method="POST" onSubmit={handleSubmit}>
+            <div class="col-md-6">
+                <input id="user_id" value={values.user_id} onChange={handleChange} type="hidden" class="form-control" name="user_id" required autocomplete="user_id" />
+            </div>
+
+            <div class="col-md-6">
+                <input id="travel_id" value={values.travel_id} onChange={handleChange} type="hidden" class="form-control" name="travel_id" required autocomplete="travel_id" />
+            </div>
+
+            <div class="row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        Reservar
+                    </button>
+                </div>
+            </div>
+        </form>
 
     )
 }
