@@ -4,6 +4,7 @@ import { Inertia } from '@inertiajs/inertia'
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 
+
 function Register() {
     const { errors } = usePage().props
 
@@ -13,8 +14,6 @@ function Register() {
         password: "",
         password_confirmation: ""
     })
-
-
 
     function handleChange(e) {
         const key = e.target.id;
@@ -29,6 +28,9 @@ function Register() {
         e.preventDefault()
         router.post('/register', values)
     }
+
+   
+
     return (
         <div class="container">
             <div class="row justify-content-center">
@@ -43,7 +45,7 @@ function Register() {
                                     <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} required autocomplete="name" autofocus />
+                                        <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
                                         {errors.name && <div><strong>{errors.name}</strong></div>}
 
 
@@ -56,7 +58,7 @@ function Register() {
                                     <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} required autocomplete="email" />
+                                        <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} autocomplete="email" />
                                         {errors.email && <div><strong>{errors.email}</strong></div>}
 
 
@@ -70,7 +72,7 @@ function Register() {
 
                                     <div class="col-md-6">
 
-                                        <input id="password" value={values.password} onChange={handleChange} type="password" name="password" class="form-control" required autocomplete="new-password" />
+                                        <input id="password" value={values.password} onChange={handleChange} type="password" name="password" class="form-control" autocomplete="new-password" />
                                         {errors.password && <div><strong>{errors.password}</strong></div>}
 
 
@@ -82,7 +84,7 @@ function Register() {
                                     <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirm Password</label>
 
                                     <div class="col-md-6">
-                                        <input id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" />
+                                        <input id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" autocomplete="new-password" />
                                         {errors.password_confirmation && <div><strong>{errors.password_confirmation}</strong></div>}
 
                                     </div>
@@ -100,6 +102,7 @@ function Register() {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
 
     );

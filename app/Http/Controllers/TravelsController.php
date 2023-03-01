@@ -23,13 +23,14 @@ class TravelsController extends Controller
         // $origin = "";
         // $destination = "";
         $date = "";
-    
+
         // if (isset($_GET["origin"])) {
         //     $origin = htmlspecialchars($_GET["origin"]);
         // }
         // if (isset($_GET["destination"])) {
         //     $destination = htmlspecialchars($_GET["destination"]);
         // }
+        
         if (isset($_GET["date"])) {
             $date = htmlspecialchars($_GET["date"]);
         }
@@ -49,7 +50,7 @@ class TravelsController extends Controller
         if ($date) {
             $travels = $query->getAllByDate($date);
             return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
-        }else {
+        } else {
             $travels = $query->getAll();
             return Inertia::render('BuscarPage', ['user' => $user, 'travel' => $travels]);
         }

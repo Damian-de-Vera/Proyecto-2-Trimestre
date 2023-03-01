@@ -45,7 +45,7 @@ function Publicar(props) {
                                     <label for="origin" class="col-md-4 col-form-label text-md-end">Origen</label>
 
                                     <div class="col-md-6">
-                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} required autocomplete="origin" autofocus />
+                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange}  autocomplete="origin" autofocus />
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
 
 
@@ -58,7 +58,7 @@ function Publicar(props) {
                                     <label for="destination" class="col-md-4 col-form-label text-md-end">Destino</label>
 
                                     <div class="col-md-6">
-                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} required autocomplete="destination" />
+                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange}  autocomplete="destination" />
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
 
 
@@ -72,7 +72,7 @@ function Publicar(props) {
 
                                     <div class="col-md-6">
 
-                                        <input id="date" value={values.password} onChange={handleChange} type="date" name="date" class="form-control" required autocomplete="date" />
+                                        <input id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control"  autocomplete="date" />
                                         {errors.date && <div><strong>{errors.date}</strong></div>}
 
 
@@ -84,7 +84,7 @@ function Publicar(props) {
                                     <label for="hour" class="col-md-4 col-form-label text-md-end">Hora</label>
 
                                     <div class="col-md-6">
-                                        <input id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour" required autocomplete="hour" />
+                                        <input id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour"  autocomplete="hour" />
                                         {errors.hour && <div><strong>{errors.hour}</strong></div>}
 
                                     </div>
@@ -94,7 +94,7 @@ function Publicar(props) {
                                     <label for="seats" class="col-md-4 col-form-label text-md-end">Asientos</label>
 
                                     <div class="col-md-6">
-                                        <input id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats" required autocomplete="seats" />
+                                        <input id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats"  autocomplete="seats" />
                                         {errors.seats && <div><strong>{errors.seats}</strong></div>}
 
                                     </div>

@@ -10,8 +10,7 @@ export default function Buscar(props) {
     let user = props.user;
 
     const [values, setForm] = useState({
-        origin: "",
-        destination: "",
+        date: ""
     })
 
     function handleChange(e) {
