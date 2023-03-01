@@ -18,4 +18,16 @@ class UserQuery
         $result->save();
         return $result;
     }
+
+    public function updateAvatar(Request $request, $currentUser)
+    {
+        dd($request->all());
+        $file = $request->hasFile('avatar');
+        if ($file) {
+            $newFile = $request->file('avatar');
+            $file_name = $newFile->store('images');
+            dd($file_name);
+        }
+        dd($file);
+    }
 }
