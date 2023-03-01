@@ -68,3 +68,11 @@ Route::get('/loginReact', function () {
 Route::get('/registerReact', function () {
     return Inertia::render('RegisterPage');
 });
+
+Route::get('/dash' , function () {
+    return view('dash.index');
+})->middleware(['auth', 'verified'])->name('dash');
+
+Route::get('/dash/crud' , function () {
+    return view('crud.index');
+});
