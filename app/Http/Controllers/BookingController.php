@@ -49,6 +49,8 @@ class BookingController extends Controller
 
     public function delete(Request $request)
     {
+        Session::flash('message', 'Se ha borrado la reserva!');
+
         Booking::where('id', $request->input('id'))->delete();
         return back();
     }
