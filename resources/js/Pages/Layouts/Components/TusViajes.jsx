@@ -1,24 +1,34 @@
 import React from 'react';
 
 import CancelarReserva from '@/Pages/Layouts/Components/CancelarReserva';
+import NoViajes from '@/Pages/Layouts/Components/NoViajes';
 
 
 export default function TusViajes(props) {
 
 
     let bookings = props.bookings;
-    console.log(bookings);
+    console.log(bookings[0].travel);
     return (
 
         <div>
+
             {bookings.map((booking, index) => {
                 return (
+
                     <div key={index}>
+                        {
+                            bookings[0].travel < 1 &&
+                            <NoViajes />
+                        }
                         <div class="container ">
 
                             <div class="row ">
                                 {booking.travel.map((viaje, indice) => {
+
+
                                     return (
+
                                         <div class="col-3  my-3" key={indice}>
                                             <div class="card " >
                                                 <div class="card-body">

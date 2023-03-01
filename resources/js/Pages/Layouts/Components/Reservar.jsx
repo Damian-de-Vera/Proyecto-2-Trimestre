@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 
 function Reservar(props) {
-
     const [values, setForm] = useState({
         user_id: props.user.id,
         travel_id: props.travel.id
