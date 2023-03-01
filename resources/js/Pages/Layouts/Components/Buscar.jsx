@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/react'
 
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
-import Reservar from '@/components/Reservar';
+import Reservar from '@/Pages/Layouts/Components/Reservar';
 
 
 export default function Buscar(props) {

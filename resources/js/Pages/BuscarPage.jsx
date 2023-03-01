@@ -1,6 +1,6 @@
-import Nav from '@/components/Nav';
-import Footer from '@/components/Footer';
-import Buscar from '@/components/Buscar';
+import Nav from '@/Pages/Layouts/Components/Partials/Nav';
+import Footer from '@/Pages/Layouts/Components/Partials/Footer';
+import Buscar from '@/Pages/Layouts/Components/Buscar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function PublicarPage(props) {

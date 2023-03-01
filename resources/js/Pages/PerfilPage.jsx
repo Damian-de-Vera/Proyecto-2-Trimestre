@@ -1,7 +1,7 @@
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import Perfil from '@/components/Perfil'
-import Avatar from '@/components/Avatar'
+import Nav from '@/Pages/Layouts/Components/Partials/Nav'
+import Footer from '@/Pages/Layouts/Components/Partials/Footer'
+import Perfil from '@/Pages/Layouts/Components/Perfil'
+import Avatar from '@/Pages/Layouts/Components/Avatar'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
