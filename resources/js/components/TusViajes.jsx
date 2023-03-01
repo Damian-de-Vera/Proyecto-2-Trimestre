@@ -7,6 +7,7 @@ export default function TusViajes(props) {
 
 
     let bookings = props.bookings;
+    console.log(bookings);
     return (
 
         <div>
@@ -26,6 +27,8 @@ export default function TusViajes(props) {
                                                     <p class="card-text">Fecha:{viaje.date} </p>
                                                     <p class="card-text">Hora: {viaje.hour} </p>
                                                     <p class="card-text">Asientos: {viaje.seats} </p>
+                                                    <p class="card-text">Conductor: {viaje.user_id}</p>
+
                                                     {/* <p class="card-text">Conductor: {booking.user.name}</p> */}
                                                     <CancelarReserva id={props.reserva[indice].id
                                                     } />

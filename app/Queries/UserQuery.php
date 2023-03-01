@@ -21,7 +21,7 @@ class UserQuery
 
     public function updateAvatar(Request $request, $currentUser)
     {
-        dd($request->all());
+        dd($request);
         $file = $request->hasFile('avatar');
         if ($file) {
             $newFile = $request->file('avatar');

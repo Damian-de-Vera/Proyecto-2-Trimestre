@@ -21,6 +21,12 @@ class BookingsQuery
         return $result;
     }
 
+    public function getBooking()
+    {
+        $result = Booking::get();
+        return $result;
+    }
+
     public function getAll($id)
     {
         $result = Booking::where('user_id', $id)->latest('updated_at')->get();

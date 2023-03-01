@@ -14,7 +14,12 @@ class Nav extends React.Component {
     render() {
 
 
-        let user = this.props.user;
+        let user = this.props.user
+        const src = 'storage/users-avatar/';
+
+
+
+        console.log(user);
         return (
             < nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" >
 
@@ -49,9 +54,13 @@ class Nav extends React.Component {
                                     </li></div>
                             }
                             {user != null &&
+
                                 <div>
+                                    <div class="bg-transparent bi bi-person-circle">{this.props.user.name}</div>
+
                                     <Dropdown>
                                         <Dropdown.Toggle>
+                                            <img src={src + user.avatar} alt=" Avatar" width='50px' height='50px' />
                                             <div class="bg-transparent bi bi-person-circle">{this.props.user.name}</div>
 
                                         </Dropdown.Toggle>

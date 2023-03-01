@@ -37,7 +37,7 @@ function Avatar(props) {
                             <form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
                                     <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
-                                    <img src="storage/users-avatar/ede0c52d-fbb6-414c-8467-2c9ea6a018eb.png" alt="" />
+                                    <img src="storage/users-avatar/ede0c52d-fbb6-414c-8467-2c9ea6a018eb.png" alt="Avatar" />
                                     <div class="col-md-6">
                                         <input id="avatar" type="file" class="form-control" value={values.avatar} onChange={handleChange} required />
                                         {errors.avatar && <div><strong>{errors.avatar}</strong></div>}
