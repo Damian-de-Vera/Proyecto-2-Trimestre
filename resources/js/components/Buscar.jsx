@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from '@inertiajs/react'
 
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
@@ -8,6 +8,7 @@ import Reservar from '@/components/Reservar';
 
 export default function Buscar(props) {
     const { errors } = usePage().props
+    let user = props.user;
 
 
     const [values, setForm] = useState({
