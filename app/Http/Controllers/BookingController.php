@@ -21,6 +21,8 @@ class BookingController extends Controller
         $id = $user->id;
         $bookings = $query->getAllByUser($id); //devuelve todas las reservas del usuario en concreto
         $reserva = $query->getAll($id); //devuelve la reserva en cuestión
+
+
         // dd($bookings);
 
         return Inertia::render('TusViajesPage', ['user' => $user, 'bookings' => $bookings, 'reserva' => $reserva]);
