@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CancelarReserva from '@/components/CancelarReserva';
+import CancelarReserva from '@/Pages/Layouts/CancelarReserva';
 
 
 export default function TusViajes(props) {

@@ -1,6 +1,6 @@
-import Nav from '@/components/Nav'
-import TusViajes from '@/components/TusViajes'
-import Footer from '@/components/Footer'
+import Nav from '@/Pages/Layouts/Components/Nav'
+import TusViajes from '@/Pages/Layouts/TusViajes'
+import Footer from '@/Pages/Layouts/Components/Footer'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

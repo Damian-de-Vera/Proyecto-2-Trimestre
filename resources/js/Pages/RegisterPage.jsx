@@ -1,6 +1,6 @@
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import Register from '@/components/Register'
+import Nav from '@/Pages/Layouts/Components/Nav'
+import Footer from '@/Pages/Layouts/Components/Footer'
+import Register from '@/Pages/Layouts/Components/Auth/Register'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
