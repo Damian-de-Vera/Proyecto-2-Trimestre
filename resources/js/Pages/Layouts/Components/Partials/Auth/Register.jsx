@@ -29,7 +29,7 @@ function Register() {
         router.post('/register', values)
     }
 
-   
+
 
     return (
         <div class="container">

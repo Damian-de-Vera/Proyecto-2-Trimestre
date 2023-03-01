@@ -1,5 +1,4 @@
 import React from 'react';
-import { Inertia } from '@inertiajs/inertia'
 
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'

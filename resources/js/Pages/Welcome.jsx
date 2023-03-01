@@ -1,10 +1,10 @@
-import Nav from '@/components/Nav'
-import Header from '@/components/Header'
-import IconsGrid from '@/components/IconsGrid'
-import Showcase from '@/components/Showcase'
-import Testimonials from '@/components/Testimonials'
-import CallToAction from '@/components/CallToAction'
-import Footer from '@/components/Footer'
+import Nav from '@/Pages/Layouts/Components/Partials/Nav'
+import Header from '@/Pages/Layouts/Components/Partials/Header'
+import IconsGrid from '@/Pages/Layouts/Components/Partials/IconsGrid'
+import Showcase from '@/Pages/Layouts/Components/Partials/Showcase'
+import Testimonials from '@/Pages/Layouts/Components/Partials/Testimonials'
+import CallToAction from '@/Pages/Layouts/Components/Partials/CallToAction'
+import Footer from '@/Pages/Layouts/Components/Partials/Footer'
 
 
 
