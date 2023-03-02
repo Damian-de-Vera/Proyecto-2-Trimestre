@@ -6,6 +6,7 @@ use App\Models\Travel;
 use App\Queries\TravelsQuery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,7 +31,7 @@ class TravelsController extends Controller
         // if (isset($_GET["destination"])) {
         //     $destination = htmlspecialchars($_GET["destination"]);
         // }
-        
+
         if (isset($_GET["date"])) {
             $date = htmlspecialchars($_GET["date"]);
         }
@@ -76,8 +77,9 @@ class TravelsController extends Controller
     {
         Travel::create($request->all());
         $user = Auth::user();
-
-        return Inertia::render('Welcome', ['user' => $user,]);
+        Session::flash('message', 'Ruta publicada!');
+        // return Inertia::render('PublicarPage', ['user' => $user,]);
+        return back();
     }
     protected function validator(array $data)
     {
