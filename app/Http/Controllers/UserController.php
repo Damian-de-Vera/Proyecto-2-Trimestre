@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Queries\UserQuery;
 use App\Queries\UsersQuery;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -79,10 +80,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $User)
     {
+        Session::flash('message', 'Perfil actualizado');
         $currentUser = Auth::user();
         $query = new UserQuery();
         $result = $query->updateUser($request, $currentUser);
-        return Inertia::render('PerfilPage', ['user' => $result]);
+        return back();
+
+        // return Inertia::render('PerfilPage', ['user' => $result]);
     }
 
     public function avatar(Request $request)

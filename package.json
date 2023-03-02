@@ -20,6 +20,7 @@
     "dependencies": {
         "@inertiajs/inertia-react": "^0.8.1",
         "@inertiajs/react": "^1.0.2",
+        "bootstrap-icons": "^1.10.3",
         "composer": "^4.1.0",
         "react-bootstrap": "^2.7.2",
         "react-flash-message": "^1.0.8",

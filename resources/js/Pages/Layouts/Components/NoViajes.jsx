@@ -9,8 +9,7 @@ function NoViajes() {
         <div class="container">
             <div class="row ">
                 <div class="col ">
-                    <h1 class="">No tienes viajes</h1>
-                    <Link href="/buscar" class='h3 '>¡Reserva uno!</Link>
+                    <Link href="/buscar" class='h3 '>¡Reserva un viaje!</Link>
 
                 </div>
             </div>
