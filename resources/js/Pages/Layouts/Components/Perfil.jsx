@@ -2,8 +2,11 @@ import React from 'react';
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 
+import 'react-toastify/dist/ReactToastify.css';
+
 function Perfil(props) {
     const { errors } = usePage().props
+    const { flash } = usePage().props
 
     const [values, setForm] = useState({
         name: props.user.name,
@@ -30,8 +33,24 @@ function Perfil(props) {
     return (
 
         <div class="container">
+            {flash.message && (
+                <div class="alert alert-success d-flex align-items-center py-3" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <div>
+                        {flash.message}
+
+                    </div>
+                </div>
+
+
+            )}
+
+
             <div class="row justify-content-center">
                 <div class="col-md-8">
+
                     <div class="card">
                         <div class="card-header">Actualizar datos</div>
 
@@ -42,7 +61,7 @@ function Perfil(props) {
                                     <label for="name" class="col-md-4 col-form-label text-md-end">Nombre</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} required autocomplete="name" autofocus />
+                                        <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
                                         {errors.name && <div><strong>{errors.name}</strong></div>}
 
                                     </div>
@@ -52,7 +71,7 @@ function Perfil(props) {
                                     <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} required autocomplete="email" />
+                                        <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} autocomplete="email" />
                                         {errors.email && <div><strong>{errors.email}</strong></div>}
 
 
@@ -62,7 +81,7 @@ function Perfil(props) {
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-end">Contraseña</label>
 
                                     <div class="col-md-6">
 
@@ -75,7 +94,7 @@ function Perfil(props) {
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirm Password</label>
+                                    <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirmar Contraseña</label>
 
                                     <div class="col-md-6">
                                         <input id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" />
@@ -87,7 +106,7 @@ function Perfil(props) {
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                            Register
+                                            Actualizar
                                         </button>
                                     </div>
                                 </div>
