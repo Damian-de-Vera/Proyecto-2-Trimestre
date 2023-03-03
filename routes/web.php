@@ -32,9 +32,11 @@ Route::get('/welcomereact', function () {
 Route::get('/publicar', function () {
     $user = Auth::user();
     if ($user != null) {
-        return Inertia::render('PublicarPage', ['user' => $user,]);}
-    
-})->middleware('auth');
+        return Inertia::render('PublicarPage', ['user' => $user,]);
+    } else {
+        return Inertia::render('LoginPage');
+    }
+});
 
 
 Route::get('/perfil', function () {
