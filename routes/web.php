@@ -32,11 +32,9 @@ Route::get('/welcomereact', function () {
 Route::get('/publicar', function () {
     $user = Auth::user();
     if ($user != null) {
-        return Inertia::render('PublicarPage', ['user' => $user,]);
-    } else {
-        return Inertia::render('LoginPage');
-    }
-});
+        return Inertia::render('PublicarPage', ['user' => $user,]);}
+    
+})->middleware('auth');
 
 
 Route::get('/perfil', function () {
@@ -69,10 +67,7 @@ Route::get('/registerReact', function () {
     return Inertia::render('RegisterPage');
 });
 
-Route::get('/dash' , function () {
-    return view('dash.index');
-})->middleware(['auth', 'verified'])->name('dash');
-
-Route::get('/dash/crud' , function () {
-    return view('crud.index');
-});
+// User Management
+// Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->middleware('auth');
+// Route::get('/users', [App\Http\Controllers\UserController::class, 'create'])->middleware('auth');
+Route::resource('/users', App\Http\Controllers\UserController::class)->middleware('auth');
