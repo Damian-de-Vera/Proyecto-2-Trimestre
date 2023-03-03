@@ -14,6 +14,7 @@ function Publicar(props) {
         date: "",
         hour: "",
         seats: "",
+        price: "",
         user_id: props.user.id
     })
 
@@ -30,12 +31,13 @@ function Publicar(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        console.log(values)
         router.post('/publicarRuta', values)
     }
     return (
-        
+
         <div class="container">
-             {flash.message && (
+            {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
@@ -58,7 +60,7 @@ function Publicar(props) {
                                     <label for="origin" class="col-md-4 col-form-label text-md-end">Origen</label>
 
                                     <div class="col-md-6">
-                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange}  autocomplete="origin" autofocus />
+                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="origin" autofocus />
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
 
 
@@ -71,7 +73,7 @@ function Publicar(props) {
                                     <label for="destination" class="col-md-4 col-form-label text-md-end">Destino</label>
 
                                     <div class="col-md-6">
-                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange}  autocomplete="destination" />
+                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} autocomplete="destination" />
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
 
 
@@ -85,7 +87,7 @@ function Publicar(props) {
 
                                     <div class="col-md-6">
 
-                                        <input id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control"  autocomplete="date" />
+                                        <input id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control" autocomplete="date" />
                                         {errors.date && <div><strong>{errors.date}</strong></div>}
 
 
@@ -97,7 +99,7 @@ function Publicar(props) {
                                     <label for="hour" class="col-md-4 col-form-label text-md-end">Hora</label>
 
                                     <div class="col-md-6">
-                                        <input id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour"  autocomplete="hour" />
+                                        <input id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour" autocomplete="hour" />
                                         {errors.hour && <div><strong>{errors.hour}</strong></div>}
 
                                     </div>
@@ -107,8 +109,18 @@ function Publicar(props) {
                                     <label for="seats" class="col-md-4 col-form-label text-md-end">Asientos</label>
 
                                     <div class="col-md-6">
-                                        <input id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats"  autocomplete="seats" />
+                                        <input id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats" autocomplete="seats" />
                                         {errors.seats && <div><strong>{errors.seats}</strong></div>}
+
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="price" class="col-md-4 col-form-label text-md-end">Precio</label>
+
+                                    <div class="col-md-6">
+                                        <input id="price" value={values.price} onChange={handleChange} type="number" class="form-control" name="price" autocomplete="price" />
+                                        {errors.price && <div><strong>{errors.price}</strong></div>}
 
                                     </div>
                                 </div>

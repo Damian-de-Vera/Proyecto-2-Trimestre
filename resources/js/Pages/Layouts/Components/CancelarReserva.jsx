@@ -6,7 +6,8 @@ import { router } from '@inertiajs/react'
 function CancelarReserva(props) {
 
     const [values] = useState({
-        id: props.id,
+        id: props.props.id,
+        travel_id: props.props.travel_id
     })
 
     function handleSubmit(e) {

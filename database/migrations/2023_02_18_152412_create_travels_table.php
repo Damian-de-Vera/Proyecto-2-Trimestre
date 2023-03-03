@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("destination", 255);
             $table->date("date");
             $table->time("hour");
+            $table->integer("price");
             $table->tinyInteger("seats");
             $table->unsignedBigInteger("user_id"); //Foránea
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
