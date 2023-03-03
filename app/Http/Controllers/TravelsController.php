@@ -75,24 +75,20 @@ class TravelsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'origin' => ['required', 'string', 'max:255'],
+            'destination' => ['required', 'string', 'max:255'],
+            'date' => ['date', 'after:tomorrow'],
+            'hour' => ['required'],
+            'seats' => ['required', 'regex:/^[a-z0-9 ]+$/i', 'max:2'], //el regex es para comprobar que es un número
+            'price' => ['required', 'regex:/^[a-z0-9 ]+$/i', 'max:3']
 
+        ]);
         Travel::create($request->all());
         $user = Auth::user();
         Session::flash('message', 'Ruta publicada!');
         // return Inertia::render('PublicarPage', ['user' => $user,]);
         return back();
-    }
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'origin' => ['required', 'string', 'max:255'],
-            'destination' => ['required', 'string', 'max:255'],
-            'date' => ['required'],
-            'hour' => ['required'],
-            'seats' => ['required', 'number', 'max:2'],
-            'price' => ['required', 'number', 'max:3']
-
-        ]);
     }
 
     /**
