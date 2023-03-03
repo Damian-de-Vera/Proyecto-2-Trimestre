@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Costumer
+    Create User
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Costumer</span>
+                        <span class="card-title">Create User</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('users.store') }}"  role="form" enctype="multipart/form-data">

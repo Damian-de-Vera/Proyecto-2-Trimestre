@@ -18,12 +18,15 @@ return new class extends Migration
             $table->unsignedBigInteger('travel_id'); //Foránea
             $table->unsignedBigInteger('user_id'); //Foránea
 
-            $table->foreign('travel_id')->references('id')->on('travels');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('travel_id')->references('id')->on('travels')->onDelete('cascade');;
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
 
             $table->timestamps();
         });
     }
+
+
+
 
     /**
      * Reverse the migrations.

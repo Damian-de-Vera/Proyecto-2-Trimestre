@@ -94,7 +94,7 @@ class UserController extends Controller
 
      public function AllUser()
      {
-         $all = DB::table('users')->get();
+         $all = DB::table('users')->get()->paginate(25);
          return view('users.all-user', compact('all'));
      }
  
@@ -137,8 +137,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $User)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id)->delete();
+
+        return redirect()->route('users.index')
+            ->with('success', 'Costumer deleted successfully');
     }
 }
