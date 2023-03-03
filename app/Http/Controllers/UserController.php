@@ -8,11 +8,16 @@ use App\Queries\UsersQuery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +25,13 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        // return view('user.index')->with('users', $users);
+
+        return view('users.index', compact('users'))->with('users', $users);
     }
 
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -29,9 +39,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $users = new User();
+        return view('users.create', compact('users'));
     }
 
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -40,6 +52,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+  
     }
     protected function validator(array $data)
     {
@@ -78,6 +91,16 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
+
+     public function AllUser()
+     {
+         $all = DB::table('users')->get();
+         return view('users.all-user', compact('all'));
+     }
+ 
+
+
+
     public function update(Request $request, User $User)
     {
         Session::flash('message', 'Perfil actualizado');
@@ -87,6 +110,16 @@ class UserController extends Controller
         return back();
 
         // return Inertia::render('PerfilPage', ['user' => $result]);
+    }
+
+    public function update2(Request $request, User $user)
+    {
+        request()->validate(User::$rules);
+
+        $user->update($request->all());
+
+        return redirect()->route('users.index')
+            ->with('success', 'user updated successfully');
     }
 
     public function avatar(Request $request)
