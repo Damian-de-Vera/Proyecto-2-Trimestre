@@ -11,14 +11,14 @@ class TravelsQuery
 
     public function getById($userId, $travelId)
     {
-        $result = Travel::with('user')->where('user_id', $userId)->where('id', $travelId)->latest('updated_at')->pluck('id');
+        $result = Travel::with('user')->where('seats', '>=', '1')->where('user_id', $userId)->where('id', $travelId)->latest('updated_at')->pluck('id');
 
         return $result->all();
     }
 
     public function getAll()
     {
-        $result = Travel::with('user')->latest('updated_at')->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->get();
         return $result;
     }
 
@@ -26,25 +26,25 @@ class TravelsQuery
     public function getAllByOrigin($origin)
     {
 
-        $result = Travel::with('user')->latest('updated_at')->where('origin', 'like', $origin)->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->where('origin', 'like', $origin)->get();
         return $result;
     }
     public function getAllByDestination($destination)
     {
 
-        $result = Travel::with('user')->latest('updated_at')->where('destination', 'like', $destination)->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->where('destination', 'like', $destination)->get();
         return $result;
     }
     public function getAllByDestinationAndOrigin($destination, $origin)
     {
 
-        $result = Travel::with('user')->latest('updated_at')->where('destination', 'like', $destination)->where('origin', 'like', $origin)->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->where('destination', 'like', $destination)->where('origin', 'like', $origin)->get();
         return $result;
     }
 
     public function getAllByDate($date)
     {
-        $result = Travel::with('user')->latest('updated_at')->where('date', 'like', $date)->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->where('date', 'like', $date)->get();
         return $result;
     }
 }
