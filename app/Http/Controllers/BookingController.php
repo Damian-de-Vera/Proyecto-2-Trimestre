@@ -36,7 +36,7 @@ class BookingController extends Controller
         $query = new TravelsQuery();
         $comprobar = $query->getById($request->input('user_id'), $request->input('travel_id'));
         if (!empty($comprobar)) {
-
+            Session::flash('errormessage', 'No puedes reservar tus propias rutas!');
             return back();
         } else {
             Session::flash('message', 'se ha reservado correctamente!');
