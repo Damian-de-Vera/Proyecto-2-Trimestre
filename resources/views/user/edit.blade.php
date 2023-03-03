@@ -1,7 +1,6 @@
-@extends('layouts.app')
-
+@extends('adminlte::page')
 @section('template_title')
-    Update Costumer
+    Update User
 @endsection
 
 @section('content')
@@ -13,14 +12,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Costumer</span>
+                        <span class="card-title">Update User</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('users.update2', $user->id) }}"  role="form" >
+                        <form method="POST" action="{{ route('users.update', $user->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('users.form')
+                            @include('user.form')
 
                         </form>
                     </div>

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('adminlte::page')
 @section('template_title')
     Create User
 @endsection
@@ -19,7 +18,7 @@
                         <form method="POST" action="{{ route('users.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('users.form')
+                            @include('user.form')
 
                         </form>
                     </div>
