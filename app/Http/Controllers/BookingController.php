@@ -40,9 +40,11 @@ class BookingController extends Controller
             return back();
         } else {
             Session::flash('message', 'se ha reservado correctamente!');
-
             Booking::create($request->all());
-
+            // Restar una plaza a los asientos disponibles
+            $travel = Travel::find($request->travel_id);
+            $travel->seats = $travel->seats - 1;
+            $travel->save();
             return back();
         }
     }
@@ -52,6 +54,9 @@ class BookingController extends Controller
         Session::flash('message', 'Se ha borrado la reserva!');
 
         Booking::where('id', $request->input('id'))->delete();
+        $travel = Travel::find($request->travel_id);
+        $travel->seats = $travel->seats + 1;
+        $travel->save();
         return back();
     }
 }

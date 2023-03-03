@@ -10,7 +10,7 @@ class Travel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'origin', 'destination', 'date', 'hour', 'seats', 'user_id'
+        'origin', 'destination', 'date', 'hour', 'seats', 'user_id', 'price'
     ];
     protected $table = 'travels';
 

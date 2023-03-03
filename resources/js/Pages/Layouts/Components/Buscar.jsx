@@ -82,6 +82,7 @@ export default function Buscar(props) {
                                             <p class="card-text">Fecha: {ruta.date}</p>
                                             <p class="card-text">Hora: {ruta.hour}</p>
                                             <p class="card-text">Asientos: {ruta.seats}</p>
+                                            <p class="card-text">Precio: {ruta.price}€</p>
                                             <p class="card-text">Conductor: {ruta.user.name}</p>
                                             {user == null &&
 

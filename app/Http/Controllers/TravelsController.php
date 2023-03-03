@@ -75,6 +75,7 @@ class TravelsController extends Controller
      */
     public function store(Request $request)
     {
+
         Travel::create($request->all());
         $user = Auth::user();
         Session::flash('message', 'Ruta publicada!');
@@ -88,7 +89,9 @@ class TravelsController extends Controller
             'destination' => ['required', 'string', 'max:255'],
             'date' => ['required'],
             'hour' => ['required'],
-            'seats' => ['required', 'number', 'max:2']
+            'seats' => ['required', 'number', 'max:2'],
+            'price' => ['required', 'number', 'max:3']
+
         ]);
     }
 
