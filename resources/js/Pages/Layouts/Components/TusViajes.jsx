@@ -50,7 +50,7 @@ export default function TusViajes(props) {
                                                     <p class="card-text" >Destino:{viaje.destination}</p>
                                                     <p class="card-text">Fecha:{viaje.date} </p>
                                                     <p class="card-text">Hora: {viaje.hour} </p>
-                                                    <p class="card-text">Asientos: {viaje.seats} </p>
+                                                    <p class="card-text">Asientos Disponibles: {viaje.seats} </p>
                                                     <p class="card-text">Precio: {viaje.price}€</p>
                                                     <p class="card-text">Conductor: {viaje.user_id}</p>
 
