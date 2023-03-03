@@ -41,11 +41,9 @@
 }*/
     </style>
 
-    <!-- @viteReactRefresh
-    @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"]) -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app-67dcdfd2.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/app-b147a62b.css') }}">
-     <script src="{{ asset('build/assets/app-21b4716e.js') }}"></script>
+    @viteReactRefresh
+    @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"]) 
+    
     @inertiaHead
 </head>
 

@@ -11,6 +11,13 @@
             {{ Form::text('email', $users->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
             {!! $errors->first('email', '<div class="invalid-feedback">:message</p>') !!}
         </div>
+        <div class="form-group">
+            {{ Form::label('password') }}
+            {{ Form::text('password', $users->password, ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'Password']) }}
+            {!! $errors->first('password', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+        
+
         
 
     </div>
