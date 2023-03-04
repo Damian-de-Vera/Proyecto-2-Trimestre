@@ -11,7 +11,7 @@ export default function PerfilPage(props) {
     return (
         <div>
             <Nav user={props.user} />
-            <Perfil user={props.user} userDiferente={props.userDiferente} />
+            <Perfil user={props.user} userPerfil={props.userPerfil} userDiferente={props.userDiferente} />
             <Footer />
         </div>
 

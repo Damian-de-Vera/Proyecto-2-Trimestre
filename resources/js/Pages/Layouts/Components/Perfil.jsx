@@ -119,7 +119,7 @@ function Perfil(props) {
                 </div>}
 
             {props.userDiferente == true &&
-                <CardUser />
+                <CardUser props={props} />
             }
         </div>
 
