@@ -10,7 +10,6 @@ export default function TusViajes(props) {
     const { flash } = usePage().props
 
     let bookings = props.bookings;
-    console.log(bookings[0].travel);
     return (
 
         <div>
@@ -40,7 +39,7 @@ export default function TusViajes(props) {
                             <div class="row ">
                                 {booking.travel.map((viaje, indice) => {
 
-
+                                    console.log(viaje);
                                     return (
 
                                         <div class="col-3  my-3" key={indice}>

@@ -31,7 +31,15 @@ class UserController extends Controller
         return view('users.index', compact('users'))->with('users', $users);
     }
 
-  
+    public function perfil(Request $request)
+    {
+
+        $query = new UserQuery();
+        $user = $query->getUser($request->user_id);
+        return Inertia::render('PerfilPage', ['user' => $user, 'userDiferente' => true]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +51,7 @@ class UserController extends Controller
         return view('users.create', compact('users'));
     }
 
-   
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,7 +60,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-  
     }
     protected function validator(array $data)
     {
@@ -92,12 +99,12 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function AllUser()
-     {
-         $all = DB::table('users')->get()->paginate(25);
-         return view('users.all-user', compact('all'));
-     }
- 
+    public function AllUser()
+    {
+        $all = DB::table('users')->get()->paginate(25);
+        return view('users.all-user', compact('all'));
+    }
+
 
 
 

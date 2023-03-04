@@ -4,12 +4,14 @@ import { Link } from '@inertiajs/react'
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 import Reservar from '@/Pages/Layouts/Components/Reservar';
+import LinkAPerfil from '@/Pages/Layouts/Components/LinkAPerfil';
 
 
 export default function Buscar(props) {
     const { flash } = usePage().props
 
     let user = props.user;
+
 
 
     const [values, setForm] = useState({
@@ -68,6 +70,7 @@ export default function Buscar(props) {
             </form>
 
             {rutas.map((ruta, index) => {
+
                 return (
                     <div key={index}>
 
@@ -83,7 +86,7 @@ export default function Buscar(props) {
                                             <p class="card-text">Hora: {ruta.hour}</p>
                                             <p class="card-text">Asientos: {ruta.seats}</p>
                                             <p class="card-text">Precio: {ruta.price}€</p>
-                                            <p class="card-text">Conductor: {ruta.user.name}</p>
+                                            <LinkAPerfil props={ruta} />
                                             {user == null &&
 
 

@@ -48,6 +48,9 @@ Route::get('/perfil', function () {
     }
 });
 
+Route::get('/perfilUser', [App\Http\Controllers\UserController::class, 'perfil'])->middleware(['auth', 'verified'])->name('perfilUser');
+
+
 Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('reservar');
 
 Route::get('misViajes', [App\Http\Controllers\BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('misViajes');
