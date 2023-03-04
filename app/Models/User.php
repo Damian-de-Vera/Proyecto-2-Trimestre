@@ -21,7 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      static $rules = [
 		'name' => 'required',
 		'email' => 'required',
-		'phone' => 'required',
+		'password' => 'required',
     ];
 
     protected $fillable = [
