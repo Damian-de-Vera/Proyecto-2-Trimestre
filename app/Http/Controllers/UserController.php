@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Ratings;
 use App\Queries\UserQuery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -95,7 +96,21 @@ class UserController extends Controller
 
         $query = new UserQuery();
         $user = $query->getUser($request->user_id);
-        return Inertia::render('PerfilPage', ['user' => $user, 'userDiferente' => true]);
+        if ($user == Auth::user()) {
+            return Inertia::render('PerfilPage', ['user' => Auth::user()]);
+        } else {
+            return Inertia::render('PerfilPage', ['userPerfil' => $user, 'user' => Auth::user(), 'userDiferente' => true]);
+        }
+    }
+
+    public function rating(Request $request)
+    {
+        $user = Ratings::create($request->all());
+        $query = new UserQuery();
+        $user = $query->getUser($request->user1_id);
+        Session::flash('message', 'Usuario valorado!');
+
+        return back();
     }
     /**
      * Update the specified resource in storage.

@@ -55,7 +55,6 @@ class Nav extends React.Component {
                             {user != null &&
 
                                 <div>
-                                    <div class="bg-transparent bi bi-person-circle">{this.props.user.name}</div>
 
                                     <Dropdown>
                                         <Dropdown.Toggle>

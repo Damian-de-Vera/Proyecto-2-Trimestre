@@ -63,6 +63,7 @@ Route::post('updateUser', [App\Http\Controllers\UserController::class, 'update']
 Route::post('cancelarViaje', [App\Http\Controllers\BookingController::class, 'delete'])->middleware(['auth', 'verified'])->name('delete');
 Route::post('cambiarAvatar', [App\Http\Controllers\UserController::class, 'avatar'])->middleware(['auth', 'verified'])->name('avatar');
 
+Route::post('rating', [App\Http\Controllers\UserController::class, 'rating'])->middleware(['auth', 'verified'])->name('perfilUser');
 
 Route::get('/loginReact', function () {
     return Inertia::render('LoginPage');
