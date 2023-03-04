@@ -7,6 +7,7 @@ use App\Queries\UserQuery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 /**
  * Class UserController
@@ -89,6 +90,13 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
+    public function perfil(Request $request)
+    {
+
+        $query = new UserQuery();
+        $user = $query->getUser($request->user_id);
+        return Inertia::render('PerfilPage', ['user' => $user, 'userDiferente' => true]);
+    }
     /**
      * Update the specified resource in storage.
      *

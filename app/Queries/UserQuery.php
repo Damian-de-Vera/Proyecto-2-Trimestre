@@ -30,4 +30,12 @@ class UserQuery
         }
         dd($file);
     }
+
+
+    public function getUser($id)
+    {
+        $result = User::where('id', $id)->first();
+
+        return $result;
+    }
 }

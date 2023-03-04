@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('users1_id'); //Foránea
-            $table->unsignedBigInteger('users2_id'); //Foránea
-            $table->foreign('users1_id')->references('id')->on('users');
-            $table->foreign('users2_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user1_id'); //Foránea
+            $table->unsignedBigInteger('user2_id'); //Foránea
+            $table->foreign('user1_id')->references('id')->on('users');
+            $table->foreign('user2_id')->references('id')->on('users');
             $table->integer('score');
             $table->text('comment');
             $table->timestamps();
