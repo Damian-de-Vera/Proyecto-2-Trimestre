@@ -60,7 +60,14 @@ function Publicar(props) {
                                     <label for="origin" class="col-md-4 col-form-label text-md-end">Origen</label>
 
                                     <div class="col-md-6">
-                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="origin" autofocus />
+                                        <select id="origin" value={values.origin} onChange={handleChange} class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option >Puerto del Rosario</option>
+                                            <option >Gran Tarajal</option>
+                                            <option >Corralejo</option>
+                                            <option >Morro Jable</option>
+                                            <option >La Oliva</option>
+                                        </select>
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
 
 
@@ -73,7 +80,14 @@ function Publicar(props) {
                                     <label for="destination" class="col-md-4 col-form-label text-md-end">Destino</label>
 
                                     <div class="col-md-6">
-                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} autocomplete="destination" />
+                                        <select id="destination" value={values.destination} onChange={handleChange} class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option >Puerto del Rosario</option>
+                                            <option>Gran Tarajal</option>
+                                            <option>Corralejo</option>
+                                            <option >Morro Jable</option>
+                                            <option >La Oliva</option>
+                                        </select>
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
 
 
