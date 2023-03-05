@@ -63,55 +63,44 @@ export default function Buscar(props) {
                 </div>
             )}
 
+            <div className="container">
+                <nav className="navbar bg-light">
+                    <Form className="d-flex" role="search" onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <Form.Control className="form-control me-2" id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
+                        </Form.Group>
+                        <Button variant="primary" type='submit' >Buscar🔎</Button>
+                    </Form>
+                </nav>
+            </div>
 
-            <nav className="navbar navbar-light bg-light px-5">
-                <div className="container-fluid">
-                    <div className="row">
-                        <Form className="d-flex" role="search" onSubmit={handleSubmit}>
-                            <Form.Group className="mb-3">
-                                <Form.Control className="form-control me-2" id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
-                            </Form.Group>
-                            <Button variant="outline-info" type='submit' >Buscar</Button>
-                        </Form>
-                    </div>
-                </div>
-            </nav>
+            <div className="container">
+                <div className="row">
 
-
-            {rutas.map((ruta, index) => {
-
-                return (
-                    <div key={index}>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-3 my-3">
-                                    <Card style={{ width: '20rem' }}>
-                                        <Card.Body>
-                                            <Card.Title>Origen: {ruta.origin}</Card.Title>
-                                            <Card.Text>Destino: {ruta.destination}</Card.Text>
-                                            <Card.Text>Fecha: {ruta.date}</Card.Text>
-                                            <Card.Text>Hora: {ruta.hour}</Card.Text>
-                                            <Card.Text>Asientos: {ruta.seats}</Card.Text>
-                                            <Card.Text>Precio: {ruta.price}€</Card.Text>
-                                            <LinkAPerfil props={ruta} />
-                                            {user == null &&
-                                                <Link href="/loginReact" className='btn btn-primary'>Reservar</Link>
-                                            }
-                                            {user != null &&
-                                                <Reservar user={props.user} travel={ruta} />
-                                            }
-                                        </Card.Body>
-                                    </Card>
-                                </div>
+                    {rutas.map((ruta, index) => {
+                        return (
+                            <div className="col-3 my-3 px-3" key={index}>
+                                <Card>
+                                    <Card.Body>
+                                        <Card.Title>{ruta.origin} -> {ruta.destination}</Card.Title>
+                                        <Card.Text>Fecha: {ruta.date}</Card.Text>
+                                        <Card.Text>Hora: {ruta.hour}</Card.Text>
+                                        <Card.Text>Asientos: {ruta.seats}</Card.Text>
+                                        <Card.Text>Precio: {ruta.price}€</Card.Text>
+                                        <LinkAPerfil props={ruta} />
+                                        {user == null &&
+                                            <Link href="/loginReact" className='btn btn-primary'>Reservar</Link>
+                                        }
+                                        {user != null &&
+                                            <Reservar user={props.user} travel={ruta} />
+                                        }
+                                    </Card.Body>
+                                </Card>
                             </div>
-                        </div>
-
-
-                    </div>
-                );
-            })}
-
-
+                        );
+                    })}
+                </div>
+            </div>
         </div>
     );
 }
