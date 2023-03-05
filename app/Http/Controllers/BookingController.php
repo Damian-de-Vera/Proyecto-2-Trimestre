@@ -36,10 +36,10 @@ class BookingController extends Controller
         $query = new TravelsQuery();
         $comprobar = $query->getById($request->input('user_id'), $request->input('travel_id'));
         if (!empty($comprobar)) {
-            Session::flash('errormessage', 'No puedes reservar tus propias rutas!');
+            Session::flash('errormessage', ' No puedes reservar tus propias rutas');
             return back();
         } else {
-            Session::flash('message', 'se ha reservado correctamente!');
+            Session::flash('message', ' Se ha reservado correctamente');
             Booking::create($request->all());
             // Restar una plaza a los asientos disponibles
             $travel = Travel::find($request->travel_id);
@@ -51,7 +51,7 @@ class BookingController extends Controller
 
     public function delete(Request $request)
     {
-        Session::flash('message', 'Se ha borrado la reserva!');
+        Session::flash('message', ' Se ha borrado la reserva');
 
         Booking::where('id', $request->input('id'))->delete();
         $travel = Travel::find($request->travel_id);
