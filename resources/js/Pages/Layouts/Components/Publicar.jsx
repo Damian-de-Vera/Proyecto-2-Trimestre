@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
+
 function Publicar(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
@@ -51,27 +52,53 @@ function Publicar(props) {
             )}
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <Card style={{ width: '45rem' }}>
+                       <Card style={{ width: '45rem' }}>
                         <Card.Header className='text-center'>Publicar un viaje</Card.Header>
                         <Card.Body>
                             <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
                                     <Form.Label for="origin" class="col-md-4 col-form-label text-md-end">Origen</Form.Label>
-                                    <Form.Group className="col-md-6" >
-                                        <Form.Control id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="origin" autofocus />
+
+                                                                        <Form.Group className="col-md-6" >
+
+                                        <select id="origin" value={values.origin} onChange={handleChange} class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option >Puerto del Rosario</option>
+                                            <option >Gran Tarajal</option>
+                                            <option >Corralejo</option>
+                                            <option >Morro Jable</option>
+                                            <option >La Oliva</option>
+                                        </select>
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
-                                    </Form.Group>
+
+
+
+
+                                                                        </Form.Group>
+
                                 </div>
 
                                 <div class="row mb-3">
                                     <Form.Label for="destination" class="col-md-4 col-form-label text-md-end">Destino</Form.Label>
+
                                     <Form.Group className="col-md-6" >
-                                        <Form.Control id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} autocomplete="destination" />
+                                        <select id="destination" value={values.destination} onChange={handleChange} class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option >Puerto del Rosario</option>
+                                            <option>Gran Tarajal</option>
+                                            <option>Corralejo</option>
+                                            <option >Morro Jable</option>
+                                            <option >La Oliva</option>
+                                        </select>
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
+
+
+
+
                                     </Form.Group>
                                 </div>
 
-                                <div class="row mb-3">
+                               <div class="row mb-3">
                                     <Form.Label for="date" class="col-md-4 col-form-label text-md-end">Fecha</Form.Label>
                                     <Form.Group className="col-md-6" >
                                         <Form.Control id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control" autocomplete="date" />
