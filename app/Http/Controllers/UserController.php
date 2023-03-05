@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
+        $users = User::paginate(15);
 
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
@@ -52,7 +52,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
 
-        return redirect()->route('users.index')
+        return redirect()->route('user.index')
             ->with('success', 'User created successfully.');
     }
 
@@ -129,6 +129,17 @@ class UserController extends Controller
 
         // return Inertia::render('PerfilPage', ['user' => $result]);
     }
+
+    // public function actualizar(Request $request, User $user)
+    // {
+    //     // dd($request);
+    //     request()->validate(User::$rules);
+
+    //     $user->actualizar($request->all());
+
+    //     return redirect()->route('users.index')
+    //         ->with('success', 'User updated successfully');
+    // }
 
     public function avatar(Request $request)
     {

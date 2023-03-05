@@ -1,8 +1,9 @@
 import React from 'react';
-import { Inertia } from '@inertiajs/inertia'
-
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 function Publicar(props) {
     const { errors } = usePage().props
@@ -50,91 +51,68 @@ function Publicar(props) {
             )}
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header text-center">Publicar un viaje</div>
-
-                        <div class="card-body">
-
-                            <form method="POST" onSubmit={handleSubmit}>
+                    <Card style={{ width: '45rem' }}>
+                        <Card.Header className='text-center'>Publicar un viaje</Card.Header>
+                        <Card.Body>
+                            <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
-                                    <label for="origin" class="col-md-4 col-form-label text-md-end">Origen</label>
-
-                                    <div class="col-md-6">
-                                        <input id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="origin" autofocus />
+                                    <Form.Label for="origin" class="col-md-4 col-form-label text-md-end">Origen</Form.Label>
+                                    <Form.Group className="col-md-6" >
+                                        <Form.Control id="origin" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="origin" autofocus />
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
-
-
-
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="destination" class="col-md-4 col-form-label text-md-end">Destino</label>
-
-                                    <div class="col-md-6">
-                                        <input id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} autocomplete="destination" />
+                                    <Form.Label for="destination" class="col-md-4 col-form-label text-md-end">Destino</Form.Label>
+                                    <Form.Group className="col-md-6" >
+                                        <Form.Control id="destination" type="text" class="form-control " name="destination" value={values.email} onChange={handleChange} autocomplete="destination" />
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
-
-
-
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="date" class="col-md-4 col-form-label text-md-end">Fecha</label>
-
-                                    <div class="col-md-6">
-
-                                        <input id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control" autocomplete="date" />
+                                    <Form.Label for="date" class="col-md-4 col-form-label text-md-end">Fecha</Form.Label>
+                                    <Form.Group className="col-md-6" >
+                                        <Form.Control id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control" autocomplete="date" />
                                         {errors.date && <div><strong>{errors.date}</strong></div>}
-
-
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="hour" class="col-md-4 col-form-label text-md-end">Hora</label>
-
-                                    <div class="col-md-6">
-                                        <input id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour" autocomplete="hour" />
+                                    <Form.Label for="hour" class="col-md-4 col-form-label text-md-end">Hora</Form.Label>
+                                    <Form.Group className=" col-md-6" >
+                                        <Form.Control id="hour" value={values.hour} onChange={handleChange} type="time" class="form-control" name="hour" autocomplete="hour" />
                                         {errors.hour && <div><strong>{errors.hour}</strong></div>}
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="seats" class="col-md-4 col-form-label text-md-end">Asientos</label>
-
-                                    <div class="col-md-6">
-                                        <input id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats" autocomplete="seats" />
+                                    <Form.Label for="seats" class="col-md-4 col-form-label text-md-end">Asientos</Form.Label>
+                                    <Form.Group className="col-md-6" >
+                                        <Form.Control id="seats" value={values.seats} onChange={handleChange} type="number" class="form-control" name="seats" autocomplete="seats" />
                                         {errors.seats && <div><strong>{errors.seats}</strong></div>}
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="price" class="col-md-4 col-form-label text-md-end">Precio</label>
-
-                                    <div class="col-md-6">
-                                        <input id="price" value={values.price} onChange={handleChange} type="number" class="form-control" name="price" autocomplete="price" />
+                                    <Form.Label for="price" class="col-md-4 col-form-label text-md-end">Precio</Form.Label>
+                                        <Form.Group className="col-md-6" >
+                                        <Form.Control id="price" value={values.price} onChange={handleChange} type="number" class="form-control" name="price" autocomplete="price" />
                                         {errors.price && <div><strong>{errors.price}</strong></div>}
-
-                                    </div>
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Publicar viaje
-                                        </button>
+                                        <Button variant="primary" type='submit' >Publicar viaje</Button>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+                            </Form>
+                        </Card.Body>
+                    </Card>
                 </div>
             </div>
         </div>

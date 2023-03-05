@@ -31,38 +31,7 @@
                             <strong>Admin:</strong>
                             {{ $user->admin }}
                         </div>
-                        <div class="form-group">
-                            <strong>Validated:</strong>
-                            {{ $user->validated }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Blocked:</strong>
-                            {{ $user->blocked }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Coupon:</strong>
-                            {{ $user->coupon }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Active Status:</strong>
-                            {{ $user->active_status }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Avatar:</strong>
-                            {{ $user->avatar }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Dark Mode:</strong>
-                            {{ $user->dark_mode }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Messenger Color:</strong>
-                            {{ $user->messenger_color }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Google Id:</strong>
-                            {{ $user->google_id }}
-                        </div>
+                       
 
                     </div>
                 </div>

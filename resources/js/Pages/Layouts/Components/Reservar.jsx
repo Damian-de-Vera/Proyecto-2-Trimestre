@@ -1,7 +1,8 @@
 import React from 'react';
-
 import { useState } from 'react'
-import { router, usePage } from '@inertiajs/react'
+import { router } from '@inertiajs/react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function Reservar(props) {
     const [values, setForm] = useState({
@@ -24,23 +25,26 @@ function Reservar(props) {
     }
     return (
 
-        <form method="POST" onSubmit={handleSubmit}>
-            <div class="col-md-6">
-                <input id="user_id" value={values.user_id} onChange={handleChange} type="hidden" class="form-control" name="user_id" required autocomplete="user_id" />
+        <Form method="POST" onSubmit={handleSubmit}>
+
+            <div className="col-md-6">
+                <Form.Group className="mb-3">
+                    <Form.Control id="user_id" value={values.user_id} onChange={handleChange} type="hidden" className="form-control" name="user_id" required autocomplete="user_id" />
+                </Form.Group>
             </div>
 
-            <div class="col-md-6">
-                <input id="travel_id" value={values.travel_id} onChange={handleChange} type="hidden" class="form-control" name="travel_id" required autocomplete="travel_id" />
+            <div className="col-md-6">
+                <Form.Group className="mb-3">
+                    <Form.Control id="travel_id" value={values.travel_id} onChange={handleChange} type="hidden" className="form-control" name="travel_id" required autocomplete="travel_id" />
+                </Form.Group>
             </div>
 
-            <div class="row mb-0">
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
-                        Reservar
-                    </button>
+            <div className="row mb-0">
+                <div className="col-md-6 offset-md-4">
+                    <Button variant="primary" type='submit' >Reservar</Button>
                 </div>
             </div>
-        </form>
+        </Form>
 
     )
 }

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 function Login() {
 
@@ -10,7 +13,6 @@ function Login() {
     })
 
     const { errors } = usePage().props
-
 
     function handleChange(e) {
         const key = e.target.id;
@@ -29,79 +31,55 @@ function Login() {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Login</div>
-
-                        <div class="card-body">
-
-                            <form method="POST" onSubmit={handleSubmit}>
+                    <Card style={{ width: '40rem' }}>
+                        <Card.Header>Login</Card.Header>
+                        <Card.Body>
+                            <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
-                                    <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
+                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email address</Form.Label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" value={values.email} onChange={handleChange} class="form-control  " required autocomplete="email" autofocus />
-
-                                        {errors.email && <div><strong>{errors.email}</strong></div>}
-                                        {/* 
-   
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                        */}
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Control id="email" type="email" value={values.email} onChange={handleChange} class="form-control  " autocomplete="email" autofocus />
+                                            {errors.email && <div><strong>{errors.email}</strong></div>}
+                                        </Form.Group>
                                     </div>
                                 </div>
 
+
                                 <div class="row mb-3">
-                                    <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
+                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end" >Password</Form.Label>
 
                                     <div class="col-md-6">
-                                        <input id="password" value={values.password} onChange={handleChange} type="password" class="form-control" name="password" required autocomplete="current-password" />
-                                        {errors.password && <div><strong>{errors.password}</strong></div>}
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Control id="password" value={values.password} onChange={handleChange} type="password" class="form-control" name="password" autocomplete="current-password" />
+                                            {errors.password && <div><strong>{errors.password}</strong></div>}
 
-                                        {/* 
-   
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                        */}
-
+                                        </Form.Group>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6 offset-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" />
-                                            <label class="form-check-label" for="remember">
-                                                Remember Me
-                                            </label>
+                                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                                <Form.Check type="checkbox" label="Remember Me" />
+                                            </Form.Group>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-0">
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <Button variant="primary" type="submit">
                                             Login
-                                        </button>
-                                        {/* 
-   
-                                         @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            Forgot Your Password?
-                                        </a>
-                                        @endif
-                                        */}
+                                        </Button>
 
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+                            </Form>
+                        </Card.Body>
+                    </Card>
                 </div>
             </div>
         </div>
