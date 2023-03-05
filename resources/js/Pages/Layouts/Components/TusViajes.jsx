@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/react'
 
 import CancelarReserva from '@/Pages/Layouts/Components/CancelarReserva';
 import NoViajes from '@/Pages/Layouts/Components/NoViajes';
-
+import Card from 'react-bootstrap/Card';
 
 export default function TusViajes(props) {
 
@@ -43,27 +43,24 @@ export default function TusViajes(props) {
                                     return (
 
                                         <div class="col-3  my-3" key={indice}>
-                                            <div class="card " >
-                                                <div class="card-body">
-                                                    <h3 class="card-title" >Origen:{viaje.origin}</h3>
-                                                    <p class="card-text" >Destino:{viaje.destination}</p>
-                                                    <p class="card-text">Fecha:{viaje.date} </p>
-                                                    <p class="card-text">Hora: {viaje.hour} </p>
-                                                    <p class="card-text">Asientos Disponibles: {viaje.seats} </p>
-                                                    <p class="card-text">Precio: {viaje.price}€</p>
-                                                    <p class="card-text">Conductor: {viaje.user_id}</p>
-
-                                                    {/* <p class="card-text">Conductor: {booking.user.name}</p> */}
+                                            <Card style={{ width: '20rem' }}>
+                                                <Card.Body>
+                                                    <Card.Title>Origen:{viaje.origin}</Card.Title>
+                                                    <Card.Text>Destino:{viaje.destination}</Card.Text>
+                                                    <Card.Text> Fecha: {viaje.date}</Card.Text>
+                                                    <Card.Text> Hora: {viaje.hour}</Card.Text>
+                                                    <Card.Text> Asientos Disponibles: {viaje.seats}</Card.Text>
+                                                    <Card.Text> Precio: {viaje.price}€</Card.Text>
+                                                    <Card.Text> Conductor: {viaje.user_id}</Card.Text>
+                                                    {/* <Card.Text> Conductor: {booking.user.name}</Card.Text> */}
                                                     <CancelarReserva props={props.reserva[indice]} />
-
-
-                                                </div>
-                                            </div>
-
+                                                </Card.Body>
+                                            </Card>
                                         </div>
                                     );
-                                })}  </div></div>
-
+                                })}
+                            </div>
+                        </div>
                     </div>
                 );
             })}

@@ -39,10 +39,7 @@
 										<th>Email</th>
 										<th>Admin</th>
 										<th>Validated</th>
-										<th>Blocked</th>
-										<th>Coupon</th>
-										<th>Active Status</th>
-										<th>Avatar</th>
+									
 									
                                         <th></th>
                                     </tr>
@@ -56,10 +53,7 @@
 											<td>{{ $user->email }}</td>
 											<td>{{ $user->admin }}</td>
 											<td>{{ $user->validated }}</td>
-											<td>{{ $user->blocked }}</td>
-											<td>{{ $user->coupon }}</td>
-											<td>{{ $user->active_status }}</td>
-											<td>{{ $user->avatar }}</td>
+											
 											
 
                                             <td>

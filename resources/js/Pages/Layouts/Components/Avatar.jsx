@@ -2,6 +2,9 @@ import React from 'react';
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 function Avatar(props) {
     const { errors } = usePage().props
 

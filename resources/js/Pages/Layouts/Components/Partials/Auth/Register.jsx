@@ -1,9 +1,9 @@
 import React from 'react';
-import { Inertia } from '@inertiajs/inertia'
-
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 function Register() {
     const { errors } = usePage().props
@@ -35,71 +35,65 @@ function Register() {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Register</div>
+                    <Card style={{ width: '45rem' }}>
+                        <Card.Header>Register</Card.Header>
+                        <Card.Body>
 
-                        <div class="card-body">
-
-                            <form method="POST" onSubmit={handleSubmit}>
+                            <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
-                                    <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
+                                    <Form.Label for="name" class="col-md-4 col-form-label text-md-end">Name</Form.Label>
+                                        <Form.Group className="mb-3 col-md-6" >
+                                            <Form.Control id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
+
+                                            {errors.name && <div><strong>{errors.name}</strong></div>}
+                                        </Form.Group>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email Address</Form.Label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
-                                        {errors.name && <div><strong>{errors.name}</strong></div>}
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Control id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} autocomplete="email" />
 
-
-
-
+                                            {errors.email && <div><strong>{errors.email}</strong></div>}
+                                        </Form.Group>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
+                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end">Password</Form.Label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} autocomplete="email" />
-                                        {errors.email && <div><strong>{errors.email}</strong></div>}
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Control id="password" value={values.password} onChange={handleChange} type="password" name="password" class="form-control" autocomplete="new-password" />
 
-
-
-
+                                            {errors.password && <div><strong>{errors.password}</strong></div>}
+                                        </Form.Group>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
+                                    <Form.Label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirm Password</Form.Label>
 
                                     <div class="col-md-6">
-
-                                        <input id="password" value={values.password} onChange={handleChange} type="password" name="password" class="form-control" autocomplete="new-password" />
-                                        {errors.password && <div><strong>{errors.password}</strong></div>}
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirm Password</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" autocomplete="new-password" />
-                                        {errors.password_confirmation && <div><strong>{errors.password_confirmation}</strong></div>}
-
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Control id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" autocomplete="new-password" />
+                                            {errors.password_confirmation && <div><strong>{errors.password_confirmation}</strong></div>}
+                                        </Form.Group>
                                     </div>
                                 </div>
 
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <Button variant="primary" type="submit">
                                             Register
-                                        </button>
+                                        </Button>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+                            </Form>
+                        </Card.Body>
+                    </Card>
                 </div>
             </div>
         </div>

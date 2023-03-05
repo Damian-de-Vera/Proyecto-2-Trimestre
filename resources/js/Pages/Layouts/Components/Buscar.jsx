@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from '@inertiajs/react'
-
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 import Reservar from '@/Pages/Layouts/Components/Reservar';
 import LinkAPerfil from '@/Pages/Layouts/Components/LinkAPerfil';
-
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export default function Buscar(props) {
     const { flash } = usePage().props
@@ -62,43 +63,45 @@ export default function Buscar(props) {
                 </div>
             )}
 
-            <h1>Busquedas con filtro:</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="date">Fecha</label>
-                <input id="date" type="date" value={values.date} onChange={handleChange} />
-                <button type="submit">Buscar</button>
-            </form>
+
+            <nav className="navbar navbar-light bg-light px-5">
+                <div className="container-fluid">
+                    <div className="row">
+                        <Form className="d-flex" role="search" onSubmit={handleSubmit}>
+                            <Form.Group className="mb-3">
+                                <Form.Control className="form-control me-2" id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
+                            </Form.Group>
+                            <Button variant="outline-info" type='submit' >Buscar</Button>
+                        </Form>
+                    </div>
+                </div>
+            </nav>
+
 
             {rutas.map((ruta, index) => {
 
                 return (
                     <div key={index}>
-
-
                         <div className="container">
                             <div className="row">
-                                <div class="col-3 my-3">
-                                    <div class="card " >
-                                        <div class="card-body">
-                                            <h3 class="card-title" >Origen: {ruta.origin}</h3>
-                                            <p class="card-text">Destino: {ruta.destination}</p>
-                                            <p class="card-text">Fecha: {ruta.date}</p>
-                                            <p class="card-text">Hora: {ruta.hour}</p>
-                                            <p class="card-text">Asientos: {ruta.seats}</p>
-                                            <p class="card-text">Precio: {ruta.price}€</p>
+                                <div className="col-3 my-3">
+                                    <Card style={{ width: '20rem' }}>
+                                        <Card.Body>
+                                            <Card.Title>Origen: {ruta.origin}</Card.Title>
+                                            <Card.Text>Destino: {ruta.destination}</Card.Text>
+                                            <Card.Text>Fecha: {ruta.date}</Card.Text>
+                                            <Card.Text>Hora: {ruta.hour}</Card.Text>
+                                            <Card.Text>Asientos: {ruta.seats}</Card.Text>
+                                            <Card.Text>Precio: {ruta.price}€</Card.Text>
                                             <LinkAPerfil props={ruta} />
                                             {user == null &&
-
-
-                                                <Link href="/loginReact" class='btn btn-primary'>Reservar</Link>
+                                                <Link href="/loginReact" className='btn btn-primary'>Reservar</Link>
                                             }
                                             {user != null &&
-
-
                                                 <Reservar user={props.user} travel={ruta} />
                                             }
-                                        </div>
-                                    </div>
+                                        </Card.Body>
+                                    </Card>
                                 </div>
                             </div>
                         </div>
