@@ -16,6 +16,14 @@ class TravelFactory extends Factory
      */
     public function definition()
     {
-        return [];
+        return [
+        'origin' => fake()->timezone(),
+        'destination' => fake()->timezone(),
+        'date' => fake()->date(),
+        'hour' => fake()->time(),
+       'price' => fake()->randomDigitNotNull(),
+       'seats' =>fake()->randomDigitNotNull(),
+       'user_id' => fake()->randomDigitNotNull()
+    ];
     }
 }
