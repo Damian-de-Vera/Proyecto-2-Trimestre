@@ -32,25 +32,25 @@ function Register() {
 
 
     return (
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <Card style={{ width: '45rem' }}>
-                        <Card.Header>Register</Card.Header>
+        <div class="container  min-vh-100  d-flex align-items-center justify-content-center">
+            <div class="row ">
+                <div class="col">
+                    <Card >
+                        <Card.Header>Registro</Card.Header>
                         <Card.Body>
 
                             <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
-                                    <Form.Label for="name" class="col-md-4 col-form-label text-md-end">Name</Form.Label>
-                                        <Form.Group className="mb-3 col-md-6" >
-                                            <Form.Control id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
+                                    <Form.Label for="name" class="col-md-4 col-form-label text-md-end">Nombre</Form.Label>
+                                    <Form.Group className="mb-3 col-md-6" >
+                                        <Form.Control id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
 
-                                            {errors.name && <div><strong>{errors.name}</strong></div>}
-                                        </Form.Group>
+                                        {errors.name && <div><strong>{errors.name}</strong></div>}
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email Address</Form.Label>
+                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email</Form.Label>
 
                                     <div class="col-md-6">
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -62,7 +62,7 @@ function Register() {
                                 </div>
 
                                 <div class="row mb-3">
-                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end">Password</Form.Label>
+                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end">Contraseña</Form.Label>
 
                                     <div class="col-md-6">
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -74,7 +74,7 @@ function Register() {
                                 </div>
 
                                 <div class="row mb-3">
-                                    <Form.Label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirm Password</Form.Label>
+                                    <Form.Label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirmar Contraseña</Form.Label>
 
                                     <div class="col-md-6">
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -87,7 +87,7 @@ function Register() {
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <Button variant="primary" type="submit">
-                                            Register
+                                            Enviar
                                         </Button>
                                     </div>
                                 </div>
