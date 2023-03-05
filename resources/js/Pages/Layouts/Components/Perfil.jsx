@@ -34,7 +34,8 @@ function Perfil(props) {
     }
     return (
 
-        <div class="container min-vh-100">
+        <div class="container min-vh-100  d-flex align-items-center justify-content-center">
+
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -50,8 +51,8 @@ function Perfil(props) {
             )}
 
             {props.userDiferente == null &&
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
+                <div class="row ">
+                    <div class="col ">
 
                         <div class="card">
                             <div class="card-header">Actualizar datos</div>
