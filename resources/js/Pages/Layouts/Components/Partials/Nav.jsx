@@ -68,11 +68,11 @@ class Nav extends React.Component {
                                             <Dropdown.Item  >
                                                 <Link href="/mensajes" class='bi bi-chat'>Mensajes</Link>
                                             </Dropdown.Item>
-                                            <Dropdown.Item  > <a href="#" class=" bi bi-credit-card" > Pagos</a></Dropdown.Item>
+                                            <Dropdown.Item  > <a href="#" class=" bi bi-credit-card">Pagos</a></Dropdown.Item>
                                             <Dropdown.Item  >
                                                 <Link href="/perfil" class=' bi bi-person-circle'>Perfil</Link></Dropdown.Item>
                                             <Dropdown.Item>
-                                                <Link href="/logout" method="post" aria-current="page" className='bi bi-door-closed'> Log out</Link>
+                                                <Link href="/logout" method="post" aria-current="page" className='bi bi-door-closed'>Cerrar sesión </Link>
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>

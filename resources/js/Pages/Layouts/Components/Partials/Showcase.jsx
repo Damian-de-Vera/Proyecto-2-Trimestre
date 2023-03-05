@@ -14,15 +14,15 @@ function Showcase() {
                     <div class="col-lg-6 order-lg-2 text-white showcase-img showcase1"
                     ></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Environment Benefits</h2>
+                        <h2>Beneficios ambientales</h2>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Control of Greenhouse gas emission
+                        Control de emisión de gases de efecto invernadero
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Best alternative for public transport
+                        La mejor alternativa para el transporte público.
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Prevent from traffic congestion
+                        Evitar la congestión del tráfico
                         </p>
                     </div>
                 </div>
@@ -30,15 +30,15 @@ function Showcase() {
                     <div class="col-lg-6 text-white showcase-img showcase2">
                     </div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Drivers Benefits</h2>
+                        <h2>Beneficios de los conductores</h2>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Save costs
+                        Ahorre costos
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Open to any route
+                        Abierto a cualquier ruta
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Comfortable and pleasant trips guaranteed by the rating system
+                        Viajes cómodos y placenteros garantizados por el sistema de calificación
                         </p>
                     </div>
                 </div>
@@ -46,15 +46,15 @@ function Showcase() {
                     <div class="col-lg-6 order-lg-2 text-white showcase-img showcase3"
                     ></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Passengers Benefits</h2>
+                        <h2>Beneficios para pasajeros</h2>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Less Travel cost
+                        Menos costo de viaje
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Passengers are insured
+                        Los pasajeros estan asegurados
                         </p>
                         <p class="lead mb-0 bi bi-check-circle">
-                            Choose your trip mates
+                        Elige tus compañeros de viaje
                         </p>
                     </div>
                 </div>
