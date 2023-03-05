@@ -12,12 +12,12 @@ function CallToAction() {
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started?</h2>
+                        <h2 class="mb-4">¿Listo para empezar?</h2>
 
                         <form class="form-subscribe" id="contactFormFooter">
 
                             <div class="row">
-                                <a href="/loginReact" class="btn btn-primary btn-lg" role="button">Sign up now!</a>
+                                <a href="/loginReact" class="btn btn-primary btn-lg" role="button">¡Regístrate ahora!</a>
                             </div>
                         </form>
                     </div>
