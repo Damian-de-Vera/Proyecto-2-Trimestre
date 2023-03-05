@@ -11,7 +11,6 @@ function CardUser(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
 
-    console.log(props)
     const [values, setForm] = useState({
         user1_id: props.props.userPerfil.id,
         user2_id: props.props.user.id,
