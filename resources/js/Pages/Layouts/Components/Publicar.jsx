@@ -35,7 +35,7 @@ function Publicar(props) {
     }
     return (
 
-        <div class="container">
+        <div class="container min-vh-100">
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
