@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
-
 function Publicar(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
@@ -19,8 +18,6 @@ function Publicar(props) {
         price: "",
         user_id: props.user.id
     })
-
-
 
     function handleChange(e) {
         const key = e.target.id;
@@ -52,15 +49,13 @@ function Publicar(props) {
             )}
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                       <Card style={{ width: '45rem' }}>
+                    <Card style={{ width: '45rem' }}>
                         <Card.Header className='text-center'>Publicar un viaje</Card.Header>
                         <Card.Body>
                             <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
                                     <Form.Label for="origin" class="col-md-4 col-form-label text-md-end">Origen</Form.Label>
-
-                                                                        <Form.Group className="col-md-6" >
-
+                                    <Form.Group className="col-md-6" >
                                         <select id="origin" value={values.origin} onChange={handleChange} class="form-select" aria-label="Default select example">
                                             <option selected></option>
                                             <option >Puerto del Rosario</option>
@@ -70,12 +65,7 @@ function Publicar(props) {
                                             <option >La Oliva</option>
                                         </select>
                                         {errors.origin && <div><strong>{errors.origin}</strong></div>}
-
-
-
-
-                                                                        </Form.Group>
-
+                                    </Form.Group>
                                 </div>
 
                                 <div class="row mb-3">
@@ -91,14 +81,10 @@ function Publicar(props) {
                                             <option >La Oliva</option>
                                         </select>
                                         {errors.destination && <div><strong>{errors.destination}</strong></div>}
-
-
-
-
                                     </Form.Group>
                                 </div>
 
-                               <div class="row mb-3">
+                                <div class="row mb-3">
                                     <Form.Label for="date" class="col-md-4 col-form-label text-md-end">Fecha</Form.Label>
                                     <Form.Group className="col-md-6" >
                                         <Form.Control id="date" value={values.date} onChange={handleChange} type="date" name="date" class="form-control" autocomplete="date" />
@@ -124,7 +110,7 @@ function Publicar(props) {
 
                                 <div class="row mb-3">
                                     <Form.Label for="price" class="col-md-4 col-form-label text-md-end">Precio</Form.Label>
-                                        <Form.Group className="col-md-6" >
+                                    <Form.Group className="col-md-6" >
                                         <Form.Control id="price" value={values.price} onChange={handleChange} type="number" class="form-control" name="price" autocomplete="price" />
                                         {errors.price && <div><strong>{errors.price}</strong></div>}
                                     </Form.Group>
@@ -136,14 +122,12 @@ function Publicar(props) {
                                     </div>
                                 </div>
 
-
                             </Form>
                         </Card.Body>
                     </Card>
                 </div>
             </div>
         </div>
-
     )
 }
 export default Publicar
