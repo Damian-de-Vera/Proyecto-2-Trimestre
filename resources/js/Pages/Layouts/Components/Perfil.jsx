@@ -34,7 +34,7 @@ function Perfil(props) {
     }
     return (
 
-        <div class="container min-vh-100  d-flex align-items-center justify-content-center">
+        <div class="container min-vh-100   ">
 
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">

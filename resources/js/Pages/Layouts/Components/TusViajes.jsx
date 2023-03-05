@@ -42,8 +42,8 @@ export default function TusViajes(props) {
                                     console.log(viaje);
                                     return (
 
-                                        <div class="col-3  my-3" key={indice}>
-                                            <Card style={{ width: '20rem' }}>
+                                        <div class="col-sm-12  col-lg-4 col-md-6" key={indice}>
+                                            <Card >
                                                 <Card.Body>
                                                     <Card.Title>Origen:{viaje.origin}</Card.Title>
                                                     <Card.Text>Destino:{viaje.destination}</Card.Text>

@@ -28,15 +28,15 @@ function Login() {
         router.post('/login', values)
     }
     return (
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <Card style={{ width: '40rem' }}>
+        <div class="container  min-vh-100  d-flex align-items-center justify-content-center">
+            <div class="row ">
+                <div class="col">
+                    <Card >
                         <Card.Header>Login</Card.Header>
                         <Card.Body>
                             <Form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
-                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email address</Form.Label>
+                                    <Form.Label for="email" class="col-md-4 col-form-label text-md-end">Email</Form.Label>
 
                                     <div class="col-md-6">
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -48,7 +48,7 @@ function Login() {
 
 
                                 <div class="row mb-3">
-                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end" >Password</Form.Label>
+                                    <Form.Label for="password" class="col-md-4 col-form-label text-md-end" >Contraseña</Form.Label>
 
                                     <div class="col-md-6">
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -63,7 +63,7 @@ function Login() {
                                     <div class="col-md-6 offset-md-4">
                                         <div class="form-check">
                                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                                <Form.Check type="checkbox" label="Remember Me" />
+                                                <Form.Check type="checkbox" label="Recuérdame" />
                                             </Form.Group>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@ function Login() {
                                 <div class="row mb-0">
                                     <div class="col-md-8 offset-md-4">
                                         <Button variant="primary" type="submit">
-                                            Login
+                                            Enviar
                                         </Button>
 
                                     </div>
