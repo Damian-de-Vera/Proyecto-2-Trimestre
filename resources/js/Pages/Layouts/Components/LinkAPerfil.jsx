@@ -5,9 +5,9 @@ import { router } from '@inertiajs/react'
 
 function LinkAPerfil(props) {
     const [values] = useState({
-        user_id: props.props.id,
+        user_id: props.props.user_id,
     })
-
+    console.log(props.props.user_id);
     function handleSubmit(e) {
         e.preventDefault()
         router.get('/perfilUser', values)
