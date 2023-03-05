@@ -58,7 +58,7 @@ class Nav extends React.Component {
 
                                     <Dropdown>
                                         <Dropdown.Toggle>
-                                            <img src={src + user.avatar} alt=" Avatar" width='50px' height='50px' />
+                                            {/* <img src={src + user.avatar} alt=" Avatar" width='50px' height='50px' /> */}
                                             <div class="bg-transparent bi bi-person-circle">{this.props.user.name}</div>
 
                                         </Dropdown.Toggle>
