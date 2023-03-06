@@ -8,7 +8,7 @@ function Footer() {
         post(route('posts.store'))
     }
     return (
-        <footer class="footer bg-light  ">
+        <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">

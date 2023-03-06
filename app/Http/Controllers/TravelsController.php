@@ -87,7 +87,7 @@ class TravelsController extends Controller
         ]);
         Travel::create($request->all());
         $user = Auth::user();
-        Session::flash('message', 'Ruta publicada!');
+        Session::flash('message','Ruta publicada');
         // return Inertia::render('PublicarPage', ['user' => $user,]);
         return back();
     }

@@ -33,12 +33,12 @@
         }
 
         body {
-         
-        background-image: url('assets/movifpsostenible_v2.ico');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        background-size:contain;     
+
+            background-image: url('assets/movifpsostenible_v2.ico');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: contain;
             /*
         background: rgb(247, 251, 247);
         background: linear-gradient(0deg, rgba(247, 251, 247, 1) 34%, rgba(199, 235, 205, 1) 65%, rgba(192, 223, 198, 1) 89%);
@@ -64,6 +64,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <!-- Accessibility Code for "www.movifp.com" -->
+    <script>
+        window.interdeal = {
+            "sitekey": "2b4bc0fe9de2932fe5f032853a056968",
+            "Position": "Left",
+            "Menulang": "ES",
+            "domains": {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            },
+            "btnStyle": {
+                "vPosition": [
+                    "80%",
+                    null
+                ],
+                "scale": [
+                    "0.6",
+                    "0.6"
+                ],
+                "color": {
+                    "main": "#6e7577",
+                    "second": ""
+                },
+                "icon": {
+                    "type": 7,
+                    "shape": "semicircle"
+                }
+            }
+        };
+        (function(doc, head, body) {
+            var coreCall = doc.createElement('script');
+            coreCall.src = 'https://cdn.equalweb.com/core/4.4.1/accessibility.js';
+            coreCall.defer = true;
+            coreCall.integrity = 'sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==';
+            coreCall.crossOrigin = 'anonymous';
+            coreCall.setAttribute('data-cfasync', true);
+            body ? body.appendChild(coreCall) : head.appendChild(coreCall);
+        })(document, document.head, document.body);
+    </script>
 
 </body>
 
