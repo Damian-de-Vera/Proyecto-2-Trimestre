@@ -21,7 +21,9 @@ class UserQuery
 
     public function updateAvatar(Request $request, $currentUser)
     {
+
         if ($request->hasFile('avatar')) {
+
             $destination_path = 'public/assets/img';
             $image = $request->file('avatar');
             $image_name  = $image->getClientOriginalName();

@@ -146,7 +146,14 @@ class UserController extends Controller
     {
         $currentUser = Auth::user();
         $query = new UserQuery();
-        $result = $query->updateAvatar($request, $currentUser);
+        if ($_FILES['avatar']['type'] == "image/jpeg" || $_FILES["avatar"]["type"] == "image/png" || $_FILES['avatar']['type'] == "image/jpg") {
+            $query->updateAvatar($request, $currentUser);
+            Session::flash('message', 'Avatar actualizado!');
+        } else {
+            Session::flash('errormessage', 'Archivo inválido');
+            // return Inertia::render('PublicarPage', ['user' => $user,]);
+            return back();
+        }
         return back();
     }
 
