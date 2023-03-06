@@ -1,31 +1,33 @@
 import React from 'react';
-import { useState } from 'react'
+import { useForm } from '@inertiajs/react'
 import { router, usePage } from '@inertiajs/react'
-
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
 function Avatar(props) {
     const { errors } = usePage().props
 
-    const [values, setForm] = useState({
-        avatar: ""
+
+    const { data, setData } = useForm({
+
+        avatar: null,
+
     })
 
+    function previewFile(e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        console.log(file.name)
+        reader.readAsText(file);
 
+        setData({ avatar: file });
 
-    function handleChange(e) {
-        const key = e.target.id;
-        const value = e.target.value
-        setForm(values => ({
-            ...values,
-            [key]: value,
-        }))
+        reader.onerror = () => {
+            console.log('fileerror');
+        }
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        router.post('/cambiarAvatar', values)
+        router.post('/cambiarAvatar', data)
     }
     return (
 
@@ -40,9 +42,8 @@ function Avatar(props) {
                             <form method="POST" onSubmit={handleSubmit}>
                                 <div class="row mb-3">
                                     <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
-                                    <img src="storage/users-avatar/ede0c52d-fbb6-414c-8467-2c9ea6a018eb.png" alt="Avatar" />
                                     <div class="col-md-6">
-                                        <input id="avatar" type="file" class="form-control" value={values.avatar} onChange={handleChange} required />
+                                        <input id="avatar" type="file" enctype="multipart/form-data" class="form-control" onChange={previewFile} required />
                                         {errors.avatar && <div><strong>{errors.avatar}</strong></div>}
 
                                     </div>

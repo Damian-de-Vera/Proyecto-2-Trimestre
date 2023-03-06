@@ -10,12 +10,11 @@ class Nav extends React.Component {
     }
 
 
-
     render() {
 
 
         let user = this.props.user
-        const src = 'storage/users-avatar/';
+        const src = 'storage/assets/img/';
 
 
 
@@ -55,6 +54,7 @@ class Nav extends React.Component {
                             {user != null &&
 
                                 <div>
+                                    <img src={src + user.avatar} alt="Avatar" height={30} />
 
                                     <Dropdown>
                                         <Dropdown.Toggle>

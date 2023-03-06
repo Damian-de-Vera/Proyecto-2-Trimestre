@@ -147,6 +147,7 @@ class UserController extends Controller
         $currentUser = Auth::user();
         $query = new UserQuery();
         $result = $query->updateAvatar($request, $currentUser);
+        return back();
     }
 
     /**

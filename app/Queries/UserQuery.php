@@ -21,14 +21,17 @@ class UserQuery
 
     public function updateAvatar(Request $request, $currentUser)
     {
-        dd($request);
-        $file = $request->hasFile('avatar');
-        if ($file) {
-            $newFile = $request->file('avatar');
-            $file_name = $newFile->store('images');
-            dd($file_name);
-        }
-        dd($file);
+        if ($request->hasFile('avatar')) {
+            $destination_path = 'public/assets/img';
+            $image = $request->file('avatar');
+            $image_name  = $image->getClientOriginalName();
+            $request->file('avatar')->storeAs($destination_path, $image_name);
+
+            $result = User::where('id', $currentUser->id)->first();
+            $result->avatar = $image_name;
+            $result->save();
+            return $result;
+        };
     }
 
 

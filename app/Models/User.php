@@ -18,16 +18,17 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
 
-     static $rules = [
-		'name' => 'required',
-		'email' => 'required',
-		'password' => 'required',
+    static $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
     ];
 
     protected $fillable = [
         'name',
         'email',
         'password',
+        'avatar'
     ];
 
     public function travels()
