@@ -51,10 +51,12 @@ function Avatar(props) {
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">Cambiar Avatar</div>
-
-
                         <div class="card-body  text-center ">
-                            <img src={src + props.props.user.avatar} alt=" Avatar" class="rounded" height={100} width={100} />
+                             {props.props.user.avatar == 'avatar.png'
+                                            ?<img src= 'assets/img/avatar.png' alt=" xd" class="rounded" height='50px' />:
+                                            <img src={src + props.props.user.avatar} alt=" Avatar" class="rounded" height='50px' />
+
+                                        }
                             <form method="POST" onSubmit={handleSubmit} class="my-4">
                                 <div class="row mb-3">
                                     <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
