@@ -18,8 +18,6 @@ function Perfil(props) {
         password_confirmation: ""
     })
 
-
-
     function handleChange(e) {
         const key = e.target.id;
         const value = e.target.value
@@ -35,8 +33,7 @@ function Perfil(props) {
     }
     return (
 
-        <div class="container min-vh-100   ">
-
+        <div class="container min-vh-100">
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -44,32 +41,22 @@ function Perfil(props) {
                     </svg>
                     <div>
                         {flash.message}
-
                     </div>
                 </div>
-
-
             )}
 
             {props.userDiferente == null &&
                 <div class="row ">
                     <div class="col ">
-
-                        <Avatar props={props} />
-
                         <div class="card my-4">
                             <div class="card-header">Actualizar datos</div>
-
                             <div class="card-body">
-
                                 <form method="POST" onSubmit={handleSubmit}>
                                     <div class="row mb-3">
                                         <label for="name" class="col-md-4 col-form-label text-md-end">Nombre</label>
-
                                         <div class="col-md-6">
                                             <input id="name" type="text" class="form-control" value={values.name} onChange={handleChange} autocomplete="name" autofocus />
                                             {errors.name && <div><strong>{errors.name}</strong></div>}
-
                                         </div>
                                     </div>
 
@@ -79,33 +66,22 @@ function Perfil(props) {
                                         <div class="col-md-6">
                                             <input id="email" type="email" class="form-control " name="email" value={values.email} onChange={handleChange} autocomplete="email" />
                                             {errors.email && <div><strong>{errors.email}</strong></div>}
-
-
-
-
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="password" class="col-md-4 col-form-label text-md-end">Contraseña</label>
-
                                         <div class="col-md-6">
-
                                             <input id="password" value={values.password} onChange={handleChange} type="password" name="password" class="form-control" required autocomplete="new-password" />
                                             {errors.password && <div><strong>{errors.password}</strong></div>}
-
-
-
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Confirmar Contraseña</label>
-
                                         <div class="col-md-6">
                                             <input id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" />
                                             {errors.password_confirmation && <div><strong>{errors.password_confirmation}</strong></div>}
-
                                         </div>
                                     </div>
 
@@ -117,16 +93,15 @@ function Perfil(props) {
                                         </div>
                                     </div>
                                 </form>
+                                <Avatar props={props} />
                             </div>
                         </div>
                     </div>
                 </div>}
-
             {props.userDiferente == true &&
                 <CardUser props={props} />
             }
         </div>
-
     );
 }
 

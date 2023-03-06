@@ -61,13 +61,13 @@ export default function Buscar(props) {
 
             <div className="container">
                 <nav className="navbar bg-light row">
-                    <Form className="d-flex flex-wrap" role="search" onSubmit={handleSubmit}>
+                    <Form className="d-flex flex-wrap my-1" role="search" onSubmit={handleSubmit}>
                         <h3 class="px-3">Filtrar búsqueda</h3>
                         <Form.Group>
-                            <Form.Control className="form-control me-2" id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
+                            <Form.Control className="form-control me-4 mx-1 " id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
 
                         </Form.Group>
-                        <Button variant="primary" type='submit' >Buscar🔎</Button>
+                        <Button className='mx-4' variant="primary" type='submit' >Buscar🔎</Button>
                     </Form>
                 </nav>
             </div>
@@ -84,7 +84,7 @@ export default function Buscar(props) {
                                         <Card.Text className="bi bi-calendar"> Fecha: {ruta.date}</Card.Text>
                                         <Card.Text className="bi bi-clock"> Hora: {ruta.hour}</Card.Text>
                                         <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {ruta.seats}</Card.Text>
-                                        <Card.Text> Precio: {ruta.price}€</Card.Text>
+                                        <Card.Text className="bi bi-currency-euro"> Precio: {ruta.price}</Card.Text>
                                         <LinkAPerfil props={ruta} />
                                         {user == null &&
                                             <Link href="/loginReact" className='btn btn-primary '>Reservar</Link>
