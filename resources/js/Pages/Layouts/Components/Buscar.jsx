@@ -13,8 +13,6 @@ export default function Buscar(props) {
 
     let user = props.user;
 
-
-
     const [values, setForm] = useState({
         date: "",
     })
@@ -30,15 +28,13 @@ export default function Buscar(props) {
         }))
     }
 
-
     function handleSubmit(e) {
         e.preventDefault()
         router.get('/buscar', values)
     }
+
     let rutas = props.travel;
     return (
-
-
         <div class="min-vh-100">
             {flash.message && (
                 <div class="alert alert-success py-3" role="alert">
@@ -65,7 +61,6 @@ export default function Buscar(props) {
 
             <div className="container">
                 <nav className="navbar bg-light row">
-
                     <Form className="d-flex flex-wrap" role="search" onSubmit={handleSubmit}>
                         <h3 class="px-3">Filtrar búsqueda</h3>
                         <Form.Group>
@@ -74,29 +69,28 @@ export default function Buscar(props) {
                         </Form.Group>
                         <Button variant="primary" type='submit' >Buscar🔎</Button>
                     </Form>
-
                 </nav>
             </div>
 
             <div className="container">
                 <div className="row">
-
                     {rutas.map((ruta, index) => {
                         return (
                             <div className=" col-sm-12  col-lg-4 col-md-6" key={index}>
                                 <Card>
                                     <Card.Body>
-                                        <Card.Title>{ruta.origin} -{'>'} {ruta.destination}</Card.Title>
-                                        <Card.Text>Fecha: {ruta.date}</Card.Text>
-                                        <Card.Text>Hora: {ruta.hour}</Card.Text>
-                                        <Card.Text>Asientos: {ruta.seats}</Card.Text>
-                                        <Card.Text>Precio: {ruta.price}€</Card.Text>
+                                        <Card.Title className='bg-gray'>{ruta.origin} -{'>'} {ruta.destination}</Card.Title>
+                                        <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom'/>
+                                        <Card.Text className="bi bi-calendar"> Fecha: {ruta.date}</Card.Text>
+                                        <Card.Text className="bi bi-clock"> Hora: {ruta.hour}</Card.Text>
+                                        <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {ruta.seats}</Card.Text>
+                                        <Card.Text> Precio: {ruta.price}€</Card.Text>
                                         <LinkAPerfil props={ruta} />
                                         {user == null &&
                                             <Link href="/loginReact" className='btn btn-primary '>Reservar</Link>
                                         }
                                         {user != null &&
-                                            <Reservar user={props.user} travel={ruta} />
+                                            <Reservar  user={props.user} travel={ruta} />
                                         }
                                     </Card.Body>
                                 </Card>
