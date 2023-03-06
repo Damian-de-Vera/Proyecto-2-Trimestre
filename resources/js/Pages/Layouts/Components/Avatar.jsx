@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from '@inertiajs/react'
 import { router, usePage } from '@inertiajs/react'
 
-function Avatar() {
+function Avatar(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
 
@@ -12,6 +12,9 @@ function Avatar() {
         avatar: null,
 
     })
+    const src = 'storage/assets/img/';
+
+    console.log(props.props.user);
 
     function previewFile(e) {
         const file = e.target.files[0];
@@ -49,9 +52,10 @@ function Avatar() {
                     <div class="card">
                         <div class="card-header">Cambiar Avatar</div>
 
-                        <div class="card-body">
 
-                            <form method="POST" onSubmit={handleSubmit}>
+                        <div class="card-body  text-center ">
+                            <img src={src + props.props.user.avatar} alt=" Avatar" class="rounded" height={100} width={100} />
+                            <form method="POST" onSubmit={handleSubmit} class="my-4">
                                 <div class="row mb-3">
                                     <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
                                     <div class="col-md-6">
