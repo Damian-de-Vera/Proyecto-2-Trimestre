@@ -17,8 +17,9 @@ function CardUser(props) {
         score: "",
         comment: ""
     })
+    const src = 'storage/assets/img/';
 
-
+    console.log(props);
 
     function handleChange(e) {
         const key = e.target.id;
@@ -41,7 +42,7 @@ function CardUser(props) {
             <div class="col-5 ">
                 <div class=" d-flex  justify-content-center my-3">
                     <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                        <Card.Img variant="top" src={src + props.props.userPerfil.avatar} />
                         <Card.Body>
                             <Card.Title><h2 class="text-center">{props.props.userPerfil.name}</h2> </Card.Title>
 

@@ -55,9 +55,9 @@ function Perfil(props) {
                 <div class="row ">
                     <div class="col ">
 
-                        <Avatar />
+                        <Avatar props={props} />
 
-                        <div class="card">
+                        <div class="card my-4">
                             <div class="card-header">Actualizar datos</div>
 
                             <div class="card-body">
