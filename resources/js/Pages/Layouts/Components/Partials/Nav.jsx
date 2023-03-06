@@ -54,12 +54,12 @@ class Nav extends React.Component {
                             {user != null &&
 
                                 <div>
-                                    <img src={src + user.avatar} alt="Avatar" height={30} />
+
 
                                     <Dropdown>
                                         <Dropdown.Toggle>
-                                            {/* <img src={src + user.avatar} alt=" Avatar" width='50px' height='50px' /> */}
-                                            <div class="bg-transparent bi bi-person-circle">{this.props.user.name}</div>
+                                            <img src={src + user.avatar} alt=" Avatar" class="rounded" height='50px' />
+                                            <div class="bg-transparent ">{this.props.user.name}</div>
 
                                         </Dropdown.Toggle>
 

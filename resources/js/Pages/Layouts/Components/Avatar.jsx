@@ -2,8 +2,9 @@ import React from 'react';
 import { useForm } from '@inertiajs/react'
 import { router, usePage } from '@inertiajs/react'
 
-function Avatar(props) {
+function Avatar() {
     const { errors } = usePage().props
+    const { flash } = usePage().props
 
 
     const { data, setData } = useForm({
@@ -32,6 +33,17 @@ function Avatar(props) {
     return (
 
         <div class="container">
+            {flash.errormessage && (
+                <div class="alert alert-danger py-3" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                    </svg>
+                    <div>
+                        {flash.errormessage}
+
+                    </div>
+                </div>
+            )}
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
