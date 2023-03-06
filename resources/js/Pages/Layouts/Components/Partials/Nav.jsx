@@ -9,14 +9,9 @@ class Nav extends React.Component {
 
     }
 
-
     render() {
-
-
         let user = this.props.user
         const src = 'storage/assets/img/';
-
-
 
         return (
             < nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" >
@@ -52,40 +47,30 @@ class Nav extends React.Component {
                                     </li></div>
                             }
                             {user != null &&
-
                                 <div>
-
-
-                                    <Dropdown>
-                                        <Dropdown.Toggle>
+                                    <Dropdown class="nav-item">
+                                        <Dropdown.Toggle class="nav-link mx-2 active bi bi-house">
                                             <img src={src + user.avatar} alt=" Avatar" class="rounded" height='50px' />
                                             <div class="bg-transparent ">{this.props.user.name}</div>
-
                                         </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
-                                            <Dropdown.Item  > <Link href="/misViajes" class=" bi bi-car-front">Mis viajes</Link></Dropdown.Item>
                                             <Dropdown.Item  >
-                                                <Link href="/mensajes" class='bi bi-chat'>Mensajes</Link>
+                                                <Link href="/misViajes" class=" bi bi-car-front"> Mis viajes</Link>
                                             </Dropdown.Item>
-                                            <Dropdown.Item  > <a href="#" class=" bi bi-credit-card">Pagos</a></Dropdown.Item>
                                             <Dropdown.Item  >
-                                                <Link href="/perfil" class=' bi bi-person-circle'>Perfil</Link></Dropdown.Item>
+                                                <Link href="/mensajes" class='bi bi-chat'> Mensajes</Link>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item  > <a href="#" class=" bi bi-credit-card"> Pagos</a></Dropdown.Item>
+                                            <Dropdown.Item  >
+                                                <Link href="/perfil" class=' bi bi-person-circle'> Perfil</Link></Dropdown.Item>
                                             <Dropdown.Item>
-                                                <Link href="/logout" method="post" aria-current="page" className='bi bi-door-closed'>Cerrar sesión </Link>
+                                                <Link href="/logout" method="post" aria-current="page" className='bi bi-door-closed'> Cerrar sesión </Link>
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
-
                                 </div>
                             }
-
-
-
-
-
-
-
                         </ul>
                     </div>
                 </div >

@@ -33,13 +33,15 @@
         }
 
         body {
-            /* background-image: url('assets/movifpsostenible_v2.ico');
+            /* 
+        background-image: url('assets/movifpsostenible_v2.ico');
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        background-size:contain;     */
-            background: rgb(247, 251, 247);
-            background: linear-gradient(0deg, rgba(247, 251, 247, 1) 34%, rgba(199, 235, 205, 1) 65%, rgba(192, 223, 198, 1) 89%);
+        background-size:contain;     
+        background: rgb(247, 251, 247);
+        background: linear-gradient(0deg, rgba(247, 251, 247, 1) 34%, rgba(199, 235, 205, 1) 65%, rgba(192, 223, 198, 1) 89%);
+            */
         }
 
         /*   footer {

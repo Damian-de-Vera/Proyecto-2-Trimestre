@@ -16,7 +16,7 @@ function LinkAPerfil(props) {
 
         <form onSubmit={handleSubmit}>
             <input id="user_id" type="hidden" value={values.user_id} name="user_id" />
-            <button type="submit" class="btn btn-info">Conductor: {props.props.user.name}</button>
+            <button type="submit" class="btn btn-outline-secondary bi bi-person-circle">Conductor: {props.props.user.name}</button>
         </form>
 
     )
