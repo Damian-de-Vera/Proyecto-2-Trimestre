@@ -17,7 +17,7 @@ class BookingsQuery
 
     public function getAllByUser($id)
     {
-        $result = User::with('travel')->where('id', $id)->latest('updated_at')->get();
+        $result = User::with('travel')->where('id', $id)->get();
         return $result;
     }
 
@@ -29,7 +29,7 @@ class BookingsQuery
 
     public function getAll($id)
     {
-        $result = Booking::where('user_id', $id)->latest('updated_at')->get();
+        $result = Booking::where('user_id', $id)->get();
         return $result;
     }
 }

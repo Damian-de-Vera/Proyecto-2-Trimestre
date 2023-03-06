@@ -11,14 +11,14 @@ class TravelsQuery
 
     public function getById($userId, $travelId)
     {
-        $result = Travel::with('user')->where('seats', '>=', '1')->where('user_id', $userId)->where('id', $travelId)->latest('updated_at')->pluck('id');
+        $result = Travel::with('user')->where('seats', '>=', '1')->where('user_id', $userId)->where('id', $travelId)->pluck('id');
 
         return $result->all();
     }
 
     public function getAll()
     {
-        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->get();
         return $result;
     }
 
@@ -26,7 +26,7 @@ class TravelsQuery
     public function getAllByOrigin($origin)
     {
 
-        $result = Travel::with('user')->where('seats', '>=', '1')->latest('updated_at')->where('origin', 'like', $origin)->get();
+        $result = Travel::with('user')->where('seats', '>=', '1')->where('origin', 'like', $origin)->get();
         return $result;
     }
     public function getAllByDestination($destination)
