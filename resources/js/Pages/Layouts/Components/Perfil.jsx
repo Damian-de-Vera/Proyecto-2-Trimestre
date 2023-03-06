@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 import CardUser from '@/Pages/Layouts/Components/CardUser';
+import Avatar from '@/Pages/Layouts/Components/Avatar';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -53,6 +54,8 @@ function Perfil(props) {
             {props.userDiferente == null &&
                 <div class="row ">
                     <div class="col ">
+
+                        <Avatar />
 
                         <div class="card">
                             <div class="card-header">Actualizar datos</div>
