@@ -39,6 +39,7 @@
             background-position: center;
             background-attachment: fixed;
             background-size: contain;
+
             /*
         background: rgb(247, 251, 247);
         background: linear-gradient(0deg, rgba(247, 251, 247, 1) 34%, rgba(199, 235, 205, 1) 65%, rgba(192, 223, 198, 1) 89%);
@@ -97,7 +98,8 @@
             var coreCall = doc.createElement('script');
             coreCall.src = 'https://cdn.equalweb.com/core/4.4.1/accessibility.js';
             coreCall.defer = true;
-            coreCall.integrity = 'sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==';
+            coreCall.integrity =
+                'sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==';
             coreCall.crossOrigin = 'anonymous';
             coreCall.setAttribute('data-cfasync', true);
             body ? body.appendChild(coreCall) : head.appendChild(coreCall);

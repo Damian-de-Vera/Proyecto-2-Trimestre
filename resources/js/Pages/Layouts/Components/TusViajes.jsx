@@ -10,6 +10,7 @@ export default function TusViajes(props) {
     const { flash } = usePage().props
 
     let bookings = props.bookings;
+    console.log(props);
     return (
 
         <div class="min-vh-100">
@@ -45,14 +46,14 @@ export default function TusViajes(props) {
                                         <div class="col-sm-12  col-lg-4 col-md-6" key={indice}>
                                             <Card >
                                                 <Card.Body>
-                                                <Card.Title className='bg-gray'>{viaje.origin} -{'>'} {viaje.destination}</Card.Title>
-                                                <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom'/>
+                                                    <Card.Title className='bg-gray'>{viaje.origin} -{'>'} {viaje.destination}</Card.Title>
+                                                    <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom' />
 
                                                     <Card.Text className="bi bi-calendar"> Fecha: {viaje.date}</Card.Text>
                                                     <Card.Text className="bi bi-clock"> Hora: {viaje.hour}</Card.Text>
                                                     <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {viaje.seats}</Card.Text>
-                                                    <Card.Text className="bi bi-currency-euro"> Precio: {viaje.price}</Card.Text>
-                                                    <Card.Text className='bi bi-person-circle'> Conductor: {viaje.user_id}</Card.Text>
+                                                    <Card.Text className="bi bi-currency-euro"> Precio: {viaje.price}€</Card.Text>
+                                                    <Card.Text className='bi bi-person-circle'> Conductor: {viaje.user.name}</Card.Text>
                                                     {/* <Card.Text> Conductor: {booking.user.name}</Card.Text> */}
                                                     <CancelarReserva props={props.reserva[indice]} />
                                                 </Card.Body>
