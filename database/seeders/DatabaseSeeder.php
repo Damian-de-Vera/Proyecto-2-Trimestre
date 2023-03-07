@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Booking;
 use App\Models\Travel;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -20,5 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         Travel::factory()->count(15)->create();
         User::factory()->count(25)->create();
+        Booking::factory()->count(25)->create();
+
     }
 }
