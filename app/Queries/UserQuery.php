@@ -36,7 +36,6 @@ class UserQuery
         };
     }
 
-
     public function getUser($id)
     {
         $result = User::where('id', $id)->first();
@@ -44,9 +43,5 @@ class UserQuery
         return $result;
     }
 
-    public function getUserEmail($email)
-    {
-        $result = User::where('email', $email)->get();
-        return $result;
-    }
+   
 }

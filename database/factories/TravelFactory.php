@@ -17,13 +17,13 @@ class TravelFactory extends Factory
     public function definition()
     {
         return [
-        'origin' => fake()->timezone(),
-        'destination' => fake()->timezone(),
-        'date' => fake()->date(),
-        'hour' => fake()->time(),
-       'price' => fake()->randomDigitNotNull(),
-       'seats' =>fake()->randomDigitNotNull(),
-       'user_id' => fake()->randomDigitNotNull()
-    ];
+            'origin' => fake()->randomElement('Puerto del rosario', 'Gran Tarajal', 'Corralejo', 'Morro Jable', 'La Oliva'),
+            'destination' => fake()->randomElement('Puerto del rosario', 'Gran Tarajal', 'Corralejo', 'Morro Jable', 'La Oliva'),
+            'date' => fake()->date(),
+            'hour' => fake()->time('H:i'),
+            'price' => fake()->numberBetween(2, 25),
+            'seats' => fake()->randomDigitNotNull(),
+            'user_id' => fake()->randomDigitNotNull()
+        ];
     }
 }
