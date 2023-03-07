@@ -93,6 +93,10 @@ class UserController extends Controller
 
     public function perfil(Request $request)
     {
+        $user = Auth::user();
+        if ($user == null) {
+            return Inertia::render('LoginPage');
+        }
 
         $query = new UserQuery();
         $user = $query->getUser($request->user_id);

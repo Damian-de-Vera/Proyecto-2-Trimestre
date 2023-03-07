@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -37,7 +38,7 @@ Route::get('/perfil', function () {
 });
 
 // Ruta para visualizar el perfil de un usuario
-Route::get('/perfilUser', [App\Http\Controllers\UserController::class, 'perfil'])->middleware(['auth', 'verified'])->name('perfilUser');
+Route::get('/perfilUser', [App\Http\Controllers\UserController::class, 'perfil'])->name('perfilUser');
 
 // Ruta para reservar un viaje/ruta
 Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('reservar');

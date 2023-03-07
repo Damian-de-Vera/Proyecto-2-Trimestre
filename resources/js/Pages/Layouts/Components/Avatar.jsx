@@ -49,34 +49,31 @@ function Avatar(props) {
             )}
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Cambiar Avatar</div>
-                        <div class="card-body  text-center ">
-                             {props.props.user.avatar == 'avatar.png'
-                                            ?<img src= 'assets/img/avatar.png' alt=" xd" class="rounded" height='50px' />:
-                                            <img src={src + props.props.user.avatar} alt=" Avatar" class="rounded" height='50px' />
+                    <div class="card-body  text-center ">
+                        {props.props.user.avatar == 'avatar.png'
+                            ? <img src='assets/img/avatar.png' alt=" xd" class="rounded" height='50px' /> :
+                            <img src={src + props.props.user.avatar} alt=" Avatar" class="rounded" height='50px' />
 
-                                        }
-                            <form method="POST" onSubmit={handleSubmit} class="my-4">
-                                <div class="row mb-3">
-                                    <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
-                                    <div class="col-md-6">
-                                        <input id="avatar" type="file" enctype="multipart/form-data" class="form-control" onChange={previewFile} required />
-                                        {errors.avatar && <div><strong>{errors.avatar}</strong></div>}
+                        }
+                        <form method="POST" onSubmit={handleSubmit} class="my-4">
+                            <div class="row mb-3">
+                                <label for="avatar" class="col-md-4 col-form-label text-md-end">Cambiar imagen de perfil</label>
+                                <div class="col-md-6">
+                                    <input id="avatar" type="file" enctype="multipart/form-data" class="form-control" onChange={previewFile} required />
+                                    {errors.avatar && <div><strong>{errors.avatar}</strong></div>}
 
-                                    </div>
                                 </div>
+                            </div>
 
 
-                                <div class="row mb-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Actualizar
-                                        </button>
-                                    </div>
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Actualizar
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

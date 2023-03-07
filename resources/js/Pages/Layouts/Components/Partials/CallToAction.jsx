@@ -17,7 +17,7 @@ function CallToAction() {
                         <form class="form-subscribe" id="contactFormFooter">
 
                             <div class="row">
-                                <a href="/loginReact" class="btn btn-primary btn-lg" role="button">¡Regístrate ahora!</a>
+                                <a href="/registerReact" class="btn btn-primary btn-lg" role="button">¡Regístrate ahora!</a>
                             </div>
                         </form>
                     </div>
