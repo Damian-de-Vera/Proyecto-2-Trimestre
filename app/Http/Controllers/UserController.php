@@ -91,6 +91,9 @@ class UserController extends Controller
 
         $query = new UserQuery();
         $user = $query->getUser($request->user_id);
+        if ($user == null) {
+            return back();
+        }
 
         if ($user == Auth::user()) {
             return Inertia::render('PerfilPage', ['user' => Auth::user()]);
