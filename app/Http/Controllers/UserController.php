@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(15);
+        $users = User::paginate();
 
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
@@ -55,15 +55,6 @@ class UserController extends Controller
         return redirect()->route('user.index')
             ->with('success', 'User created successfully.');
     }
-
-    // protected function validator(array $data)
-    // {
-    //     return Validator::make($data, [
-    //         'name' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'max:255'],
-    //         'password' => ['required'],
-    //     ]);
-    // }
 
     /**
      * Display the specified resource.
@@ -135,16 +126,6 @@ class UserController extends Controller
         // return Inertia::render('PerfilPage', ['user' => $result]);
     }
 
-    // public function actualizar(Request $request, User $user)
-    // {
-    //     // dd($request);
-    //     request()->validate(User::$rules);
-
-    //     $user->actualizar($request->all());
-
-    //     return redirect()->route('users.index')
-    //         ->with('success', 'User updated successfully');
-    // }
 
     public function avatar(Request $request)
     {
@@ -155,7 +136,6 @@ class UserController extends Controller
             Session::flash('message', 'Avatar actualizado!');
         } else {
             Session::flash('errormessage', 'Archivo inválido');
-            // return Inertia::render('PublicarPage', ['user' => $user,]);
             return back();
         }
         return back();

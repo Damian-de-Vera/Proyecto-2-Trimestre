@@ -37,8 +37,8 @@
                                         
 										<th>Name</th>
 										<th>Email</th>
+                                        <th>Password</th>
 										<th>Admin</th>
-										<th>Validated</th>
 									
 									
                                         <th></th>
@@ -51,8 +51,8 @@
                                             
 											<td>{{ $user->name }}</td>
 											<td>{{ $user->email }}</td>
+                                            <td>{{ $user->password }}</td>
 											<td>{{ $user->admin }}</td>
-											<td>{{ $user->validated }}</td>
 											
 											
 

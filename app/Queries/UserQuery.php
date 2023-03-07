@@ -43,4 +43,10 @@ class UserQuery
 
         return $result;
     }
+
+    public function getUserEmail($email)
+    {
+        $result = User::where('email', $email)->get();
+        return $result;
+    }
 }

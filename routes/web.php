@@ -75,4 +75,4 @@ Route::get('/registerReact', function () {
 });
 
 // User Management
-Route::resource('/users', App\Http\Controllers\UserController::class)->middleware('auth');
+Route::resource('/users', App\Http\Controllers\UserController::class)->middleware(['auth']);
