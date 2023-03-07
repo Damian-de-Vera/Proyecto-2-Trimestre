@@ -60,7 +60,7 @@ class Nav extends React.Component {
 
                                         <Dropdown.Menu>
                                             <Dropdown.Item  >
-                                                <Link href="/misViajes" class=" bi bi-car-front"> Mis viajes</Link>
+                                                <Link href="/misViajes" class=" bi bi-car-front"> Mis reservas</Link>
                                             </Dropdown.Item>
                                             <Dropdown.Item  >
                                                 <Link href="/mensajes" class='bi bi-chat'> Mensajes</Link>

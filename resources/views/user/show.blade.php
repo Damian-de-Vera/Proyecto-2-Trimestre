@@ -20,6 +20,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Avatar:</strong>
+                      <img src="/storage/assets/img/{{ $user->avatar }}" alt="avatar">    
+                        </div>
+                        <div class="form-group">
                             <strong>Name:</strong>
                             {{ $user->name }}
                         </div>

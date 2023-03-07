@@ -13,6 +13,9 @@
                 <div class="card card-default">
                     <div class="card-header">
                         <span class="card-title">Create User</span>
+                        <div class="float-right">
+                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('users.store') }}"  role="form" enctype="multipart/form-data">
