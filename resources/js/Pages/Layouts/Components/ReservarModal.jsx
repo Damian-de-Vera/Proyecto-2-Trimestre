@@ -33,7 +33,7 @@ function ReservarModal(props) {
                     <Card.Title className='bg-gray'>{props.travel.origin} -{'>'} {props.travel.destination}</Card.Title>
                     <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom' />
                     <Card.Text className="bi bi-calendar"> Fecha: {props.travel.date}</Card.Text>
-                    <Card.Text className="bi bi-clock"> Hora: {props.travel.Hour}</Card.Text>
+                    <Card.Text className="bi bi-clock"> Hora: {props.travel.hour}</Card.Text>
                     <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {props.travel.seats}</Card.Text>
                     <Card.Text className="bi bi-currency-euro"> Precio: {props.travel.price}</Card.Text>
                     <LinkAPerfil props={props.travel} />

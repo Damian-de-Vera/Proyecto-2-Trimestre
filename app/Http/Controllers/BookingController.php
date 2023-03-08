@@ -33,27 +33,50 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
+
         $query = new TravelsQuery();
         $comprobar = $query->getById($request->input('user_id'), $request->input('travel_id'));
         if (!empty($comprobar)) {
             Session::flash('errormessage', ' No puedes reservar tus propias rutas');
             return back();
         } else {
-            Session::flash('message', ' Se ha reservado correctamente');
-            Booking::create($request->all());
-            // Restar una plaza a los asientos disponibles
-            $travel = Travel::find($request->travel_id);
-            $travel->seats = $travel->seats - 1;
-            $travel->save();
-            return back();
+            $travel = Travel::find($request->trave_id);
+            $booking = Booking::firstOrNew([
+                'user_id' => $request->user_id,
+                'travel_id' => $request->travel_id
+            ]);
+
+
+            if ($booking->id) {
+                $this->delete($booking);
+            } else {
+                Session::flash('message', ' Se ha reservado correctamente');
+                Booking::create($request->all());
+                // Restar una plaza a los asientos disponibles
+                $travel = Travel::find($request->travel_id);
+                $travel->seats = $travel->seats - 1;
+                $travel->save();
+                return back();
+            }
         }
     }
 
-    public function delete(Request $request)
+    public function delete($booking)
     {
         Session::flash('message', ' Se ha borrado la reserva');
 
-        Booking::where('id', $request->input('id'))->delete();
+        Booking::where('id', $booking->id)->delete();
+        $travel = Travel::find($booking->travel_id);
+        $travel->seats = $travel->seats + 1;
+        $travel->save();
+        return back();
+    }
+    public function deleteViaje(Request $request)
+    {
+
+        Session::flash('message', ' Se ha borrado la reserva');
+
+        Booking::where('id', $request->id)->delete();
         $travel = Travel::find($request->travel_id);
         $travel->seats = $travel->seats + 1;
         $travel->save();

@@ -60,7 +60,7 @@ Route::post('publicarRuta', [App\Http\Controllers\TravelsController::class, 'sto
 Route::post('updateUser', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
 
 // Ruta para poder cancelar los viajes reservados
-Route::post('cancelarViaje', [App\Http\Controllers\BookingController::class, 'delete'])->middleware(['auth', 'verified'])->name('delete');
+Route::post('cancelarViaje', [App\Http\Controllers\BookingController::class, 'deleteViaje'])->middleware(['auth', 'verified'])->name('delete');
 
 
 Route::post('cambiarAvatar', [App\Http\Controllers\UserController::class, 'avatar'])->middleware(['auth', 'verified'])->name('avatar');
