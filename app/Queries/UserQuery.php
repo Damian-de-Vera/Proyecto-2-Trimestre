@@ -15,6 +15,7 @@ class UserQuery
         $result->name = $request->name;
         $result->email = $request->email;
         $result->password = $password;
+        $result->about_me = $request->about_me;
         $result->save();
         return $result;
     }

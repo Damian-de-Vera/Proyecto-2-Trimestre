@@ -28,15 +28,6 @@ Route::get('/publicar', function () {
     }
 });
 
-// Ruta para editar tu perfil, además para poder editarlo obviamente deberás estar logeado sino te devolverá a la página del login
-Route::get('/perfil', function () {
-    $user = Auth::user();
-    if ($user != null) {
-        return Inertia::render('PerfilPage', ['user' => $user,]);
-    } else {
-        return Inertia::render('LoginPage');
-    }
-});
 
 // Ruta para visualizar el perfil de un usuario
 Route::get('/perfilUser', [App\Http\Controllers\UserController::class, 'perfil'])->name('perfilUser');

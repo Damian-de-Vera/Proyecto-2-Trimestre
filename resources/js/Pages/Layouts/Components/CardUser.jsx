@@ -54,7 +54,7 @@ function CardUser(props) {
                         </ListGroup>
                         <Card.Body>
                             <Card.Text>
-                                Sobre mi:
+                                Sobre mi: {props.props.userPerfil.about_me}
                             </Card.Text>
 
                         </Card.Body>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('about_me')->nullable();
             $table->tinyInteger('admin')->nullable();
             $table->tinyInteger('validated')->nullable();
             $table->tinyInteger('blocked')->nullable();

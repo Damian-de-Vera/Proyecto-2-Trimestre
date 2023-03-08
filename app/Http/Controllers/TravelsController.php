@@ -35,8 +35,6 @@ class TravelsController extends Controller
         if (isset($_GET["date"])) {
             $date = htmlspecialchars($_GET["date"]);
         }
-
-
         //Queries
         // if ($destination && $origin) {
         //     $travels = $query->getAllByDestinationAndOrigin($destination, $origin);
