@@ -95,9 +95,11 @@ class UserController extends Controller
             return Inertia::render('LoginPage');
         }
 
-
         $query = new UserQuery();
         $user = $query->getUser($request->user_id);
+        if ($user == null) {
+            return back();
+        }
 
         $ratingsQuery = new RatingsQuery();
         $ratings = $ratingsQuery->getAllById($user->id);
@@ -106,7 +108,8 @@ class UserController extends Controller
         }
 
         if ($user == Auth::user()) {
-            return Inertia::render('PerfilPage', ['user' => Auth::user()]);
+            $ratings = $ratingsQuery->getAllMyVotes($user->id);
+            return Inertia::render('PerfilPage', ['user' => Auth::user(), 'ratings' => $ratings]);
         } else {
             return Inertia::render('PerfilPage', ['userPerfil' => $user, 'user' => Auth::user(), 'userDiferente' => true, 'ratings' => $ratings]);
         }
@@ -136,7 +139,7 @@ class UserController extends Controller
 
         foreach ($xd as $i) {
 
-            if ($request->email == $i) {
+            if ($request->email == $i && $request->email != Auth::user()->email) {
                 Session::flash('errormessage', 'Ese email ya existe!');
                 return back();
             }
