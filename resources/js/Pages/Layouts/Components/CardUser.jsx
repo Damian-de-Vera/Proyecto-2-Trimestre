@@ -87,7 +87,15 @@ function CardUser(props) {
 
             </div>
 
+            <Card>
+                <Card.Body className="my-4 text-center">
+                    <Card.Title>
+                        <h4>Comentarios que la gente de  <strong>{props.props.userPerfil.name}</strong></h4>
 
+                    </Card.Title>
+
+
+                </Card.Body></Card>
             {ratings[0].my_votes.map((user) => {
 
                 return (

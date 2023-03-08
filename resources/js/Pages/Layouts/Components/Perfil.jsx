@@ -5,18 +5,21 @@ import CardUser from '@/Pages/Layouts/Components/CardUser';
 import Avatar from '@/Pages/Layouts/Components/Avatar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 function Perfil(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
-
+    console.log(props);
     const [values, setForm] = useState({
         name: props.user.name,
         email: props.user.email,
         password: "",
         password_confirmation: ""
     })
+    const src = '/storage/assets/img/';
 
     function handleChange(e) {
         const key = e.target.id;
@@ -116,6 +119,48 @@ function Perfil(props) {
                                 <Avatar props={props} />
                             </div>
                         </div>
+                        <Card>
+                            <Card.Body className="my-4 text-center">
+                                <Card.Title>
+                                    <h4>Comentarios que la gente hace de ti</h4>
+
+                                </Card.Title>
+
+
+                            </Card.Body></Card>
+                        {props.ratings[0].my_votes.map((user) => {
+
+                            return (
+                                <div className="" >
+
+
+                                    <Card>
+
+                                        <Card.Body>
+                                            <Card.Title>
+                                                <h4 class="text-center">Nombre : {user.name}
+                                                    <img src={src + user.avatar} alt=" Avatar" class="rounded mx-3" height='50px' />
+                                                </h4>
+
+                                            </Card.Title>
+
+
+                                        </Card.Body>
+
+                                        <ListGroup className="list-group-flush">
+                                            <ListGroup.Item>Valoración: {user.rating.score} <i class="bi bi-star-fill text-warning"></i></ListGroup.Item>
+
+                                        </ListGroup>
+                                        <Card.Body>
+                                            <Card.Text>
+                                                {user.rating.comment}
+                                            </Card.Text>
+
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>}
             {props.userDiferente == true &&
