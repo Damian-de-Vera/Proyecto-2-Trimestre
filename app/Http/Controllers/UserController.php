@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Ratings;
+use App\Queries\RatingsQuery;
 use App\Queries\UserQuery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -94,8 +95,12 @@ class UserController extends Controller
             return Inertia::render('LoginPage');
         }
 
+
         $query = new UserQuery();
         $user = $query->getUser($request->user_id);
+
+        $ratingsQuery = new RatingsQuery();
+        $ratings = $ratingsQuery->getAllById($user->id);
         if ($user == null) {
             return back();
         }
@@ -103,15 +108,15 @@ class UserController extends Controller
         if ($user == Auth::user()) {
             return Inertia::render('PerfilPage', ['user' => Auth::user()]);
         } else {
-            return Inertia::render('PerfilPage', ['userPerfil' => $user, 'user' => Auth::user(), 'userDiferente' => true]);
+            return Inertia::render('PerfilPage', ['userPerfil' => $user, 'user' => Auth::user(), 'userDiferente' => true, 'ratings' => $ratings]);
         }
     }
 
     public function rating(Request $request)
     {
-        $user = Ratings::create($request->all());
+        Ratings::create($request->all());
         $query = new UserQuery();
-        $user = $query->getUser($request->user1_id);
+        $query->getUser($request->user1_id);
         Session::flash('message', 'Usuario valorado!');
 
         return back();
