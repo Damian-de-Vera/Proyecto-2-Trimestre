@@ -65,7 +65,7 @@ Route::post('cancelarViaje', [App\Http\Controllers\BookingController::class, 'de
 
 Route::post('cambiarAvatar', [App\Http\Controllers\UserController::class, 'avatar'])->middleware(['auth', 'verified'])->name('avatar');
 
-
+// Ruta para votar a un usuario
 Route::post('rating', [App\Http\Controllers\UserController::class, 'rating'])->middleware(['auth', 'verified'])->name('perfilUser');
 
 

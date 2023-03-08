@@ -42,6 +42,20 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
 
+    public function votesFor()
+    {
+        return $this->belongsToMany(User::class, 'ratings', 'user2_id', 'user1_id')
+            ->withPivot('score', 'comment')
+            ->as('rating');
+    }
+
+    public function myVotes()
+    {
+        return $this->belongsToMany(User::class, 'ratings', 'user1_id', 'user2_id')
+            ->withPivot('score', 'comment')
+            ->as('rating');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -10,7 +10,7 @@ function CardUser(props) {
 
     const { errors } = usePage().props
     const { flash } = usePage().props
-
+    const { ratings } = usePage().props;
     const [values, setForm] = useState({
         user1_id: props.props.userPerfil.id,
         user2_id: props.props.user.id,
@@ -54,8 +54,7 @@ function CardUser(props) {
                         </ListGroup>
                         <Card.Body>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Sobre mi:
                             </Card.Text>
 
                         </Card.Body>
@@ -85,7 +84,41 @@ function CardUser(props) {
                             Enviar
                         </Button>
                     </Form></div>
-            </div></div>
+
+            </div>
+
+
+            {ratings[0].my_votes.map((user) => {
+
+                return (
+                    <div className="" >
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>
+                                    <h4 class="text-center">Nombre : {user.name}
+                                        <img src={src + user.avatar} alt=" Avatar" class="rounded mx-3" height='50px' />
+                                    </h4>
+
+                                </Card.Title>
+
+
+                            </Card.Body>
+
+                            <ListGroup className="list-group-flush">
+                                <ListGroup.Item>Valoración: {user.rating.score} <i class="bi bi-star-fill text-warning"></i></ListGroup.Item>
+
+                            </ListGroup>
+                            <Card.Body>
+                                <Card.Text>
+                                    {user.rating.comment}
+                                </Card.Text>
+
+                            </Card.Body>
+                        </Card>
+                    </div>
+                );
+            })}
+        </div>
     );
 }
 
