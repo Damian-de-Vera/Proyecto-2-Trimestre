@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from '@inertiajs/react'
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
-import Reservar from '@/Pages/Layouts/Components/Reservar';
 import LinkAPerfil from '@/Pages/Layouts/Components/LinkAPerfil';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -27,6 +26,8 @@ export default function Buscar(props) {
             [key]: value,
         }))
     }
+
+
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -75,12 +76,14 @@ export default function Buscar(props) {
             <div className="container">
                 <div className="row">
                     {rutas.map((ruta, index) => {
+                        let showTravel = ' /travel/show/' + ruta.id;
+                        console.log(showTravel);
                         return (
                             <div className=" col-sm-12  col-lg-4 col-md-6" key={index}>
                                 <Card>
                                     <Card.Body>
                                         <Card.Title className='bg-gray'>{ruta.origin} -{'>'} {ruta.destination}</Card.Title>
-                                        <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom'/>
+                                        <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom' />
                                         <Card.Text className="bi bi-calendar"> Fecha: {ruta.date}</Card.Text>
                                         <Card.Text className="bi bi-clock"> Hora: {ruta.hour}</Card.Text>
                                         <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {ruta.seats}</Card.Text>
@@ -90,7 +93,10 @@ export default function Buscar(props) {
                                             <Link href="/loginReact" className='btn btn-primary '>Reservar</Link>
                                         }
                                         {user != null &&
-                                            <Reservar  user={props.user} travel={ruta} />
+                                            //<Reservar user={props.user} travel={ruta} />
+                                            <Link href={'/travel/show/' + ruta.id} class="btn btn-primary"> Reservar</Link>
+
+
                                         }
                                     </Card.Body>
                                 </Card>

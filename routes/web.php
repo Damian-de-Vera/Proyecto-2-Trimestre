@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,6 +43,9 @@ Route::get('/perfilUser', [App\Http\Controllers\UserController::class, 'perfil']
 
 // Ruta para reservar un viaje/ruta
 Route::post('reservarRuta', [App\Http\Controllers\BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('reservar');
+
+//cargar el modal para reservar la ruta/viaje
+Route::get('travel/show/{travel}', [App\Http\Controllers\TravelsController::class, 'show'])->middleware(['auth', 'verified'])->name('show');
 
 // Ruta para visualizar las rutas que tienes reservadas
 Route::get('misViajes', [App\Http\Controllers\BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('misViajes');
