@@ -87,7 +87,7 @@ export default function Buscar(props) {
                                         <Card.Text className="bi bi-calendar"> Fecha: {ruta.date}</Card.Text>
                                         <Card.Text className="bi bi-clock"> Hora: {ruta.hour}</Card.Text>
                                         <Card.Text className="bi bi-people-fill"> Asientos Disponibles: {ruta.seats}</Card.Text>
-                                        <Card.Text className="bi bi-currency-euro"> Precio: {ruta.price}</Card.Text>
+                                        <Card.Text className="bi bi-currency-euro"> Precio: {ruta.price} €</Card.Text>
                                         <LinkAPerfil props={ruta} />
                                         {user == null &&
                                             <Link href="/loginReact" className='btn btn-primary my-3 '>Reservar</Link>
