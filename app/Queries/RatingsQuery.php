@@ -17,12 +17,4 @@ class RatingsQuery
 
         return $result;
     }
-
-    public function getAllMyVotes($id)
-    {
-        $user = User::find($id);
-        $result = $user->with('myVotes')->where('id', $id)->latest('updated_at')->get();
-
-        return $result;
-    }
 }
