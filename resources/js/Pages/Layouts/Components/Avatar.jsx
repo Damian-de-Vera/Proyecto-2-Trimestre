@@ -19,7 +19,6 @@ function Avatar(props) {
     function previewFile(e) {
         const file = e.target.files[0];
         const reader = new FileReader();
-        console.log(file.name)
         reader.readAsText(file);
 
         setData({ avatar: file });

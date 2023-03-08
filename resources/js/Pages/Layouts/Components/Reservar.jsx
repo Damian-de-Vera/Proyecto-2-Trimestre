@@ -9,7 +9,6 @@ function Reservar(props) {
         user_id: props.user.id,
         travel_id: props.travel.id
     })
-
     function handleChange(e) {
         const key = e.target.id;
         const value = e.target.value
@@ -42,6 +41,7 @@ function Reservar(props) {
             <div className="row mb-0">
                 <div className="col-md-6 offset-md-4">
                     <Button variant="primary" type='submit' >Reservar</Button>
+
                 </div>
             </div>
         </Form>

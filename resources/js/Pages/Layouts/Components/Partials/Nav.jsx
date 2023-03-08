@@ -11,8 +11,7 @@ class Nav extends React.Component {
 
     render() {
         let user = this.props.user
-        const src = 'storage/assets/img/';
-
+        const src = '/storage/assets/img/';
         return (
             < nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" >
 
@@ -50,11 +49,11 @@ class Nav extends React.Component {
                                 <div>
                                     <Dropdown class="nav-item">
                                         <Dropdown.Toggle class="nav-link mx-2 active bi bi-house">
-                                            {user.avatar  == 'avatar.png'
-                                            ?<img src= 'assets/img/avatar.png' alt=" xd" class="rounded" height='50px' />:
-                                            <img src={src + user.avatar} alt=" Avatar" class="rounded" height='50px' />
+                                            {user.avatar == 'avatar.png'
+                                                ? <img src='assets/img/avatar.png' alt="Avatar" class="rounded" height='50px' /> :
+                                                <img src={src + user.avatar} alt=" Avatar" class="rounded" height='50px' />
 
-                                        }
+                                            }
                                             <div class="bg-transparent ">{this.props.user.name}</div>
                                         </Dropdown.Toggle>
 
