@@ -6,9 +6,12 @@ import Form from 'react-bootstrap/Form';
 
 function CancelarReserva(props) {
 
+    console.log(props);
     const [values] = useState({
         id: props.props.id,
-        travel_id: props.props.travel_id
+        user_id: props.props.user_id,
+        travel_id: props.props.travel_id,
+
     })
 
     function handleSubmit(e) {
@@ -17,9 +20,7 @@ function CancelarReserva(props) {
     }
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" >
-                <Form.Control id="id" type="hidden" value={values.id} name="id" />
-            </Form.Group>
+
             <Button variant="outline-danger" type='submit' >Cancelar</Button>
         </Form>
 

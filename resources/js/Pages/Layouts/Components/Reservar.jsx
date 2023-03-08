@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function Reservar(props) {
+
     const [values, setForm] = useState({
         user_id: props.user.id,
         travel_id: props.travel.id
