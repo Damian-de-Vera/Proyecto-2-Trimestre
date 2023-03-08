@@ -43,5 +43,11 @@ class UserQuery
         return $result;
     }
 
-   
+    public function getAllEmail()
+    {
+        $result = User::get()->pluck('email');
+
+
+        return $result;
+    }
 }

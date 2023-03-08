@@ -25,8 +25,13 @@ class UserController extends Controller
     {
         $users = User::paginate(15);
 
-        return view('user.index', compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+        $user = Auth::user();
+        if ($user->admin == 1) {
+            return view('user.index', compact('users'))
+                ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -120,10 +125,33 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $query = new UserQuery();
+
+        $xd = $query->getAllEmail();
+
+        foreach ($xd as $i) {
+
+            if ($request->email == $i) {
+                Session::flash('errormessage', 'Ese email ya existe!');
+                return back();
+            }
+        }
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'max:255', 'min:9'],
+            'password_confirmation' => ['required', 'max:255', 'min:9'],
+
+
+        ]);
+
+        if ($request->password != $request->password_confirmation) {
+            Session::flash('errormessage', 'La contraseña y su confirmación deben coincidir!');
+            return back();
+        }
         Session::flash('message', 'Perfil actualizado');
         $currentUser = Auth::user();
-        $query = new UserQuery();
-        $result = $query->updateUser($request, $currentUser);
+        $query->updateUser($request, $currentUser);
         return back();
 
         // return Inertia::render('PerfilPage', ['user' => $result]);

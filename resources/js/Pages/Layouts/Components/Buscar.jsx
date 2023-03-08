@@ -60,10 +60,10 @@ export default function Buscar(props) {
                 </div>
             )}
 
-            <div className="container">
+            <div className="container my-2">
                 <nav className="navbar bg-light row">
                     <Form className="d-flex flex-wrap my-1" role="search" onSubmit={handleSubmit}>
-                        <h3 class="px-3">Filtrar búsqueda</h3>
+                        <h3 class="px-3 ">Filtrar búsqueda</h3>
                         <Form.Group>
                             <Form.Control className="form-control me-4 mx-1 " id="date" value={values.date} onChange={handleChange} type="date" name="search" placeholder="Buscar" aria-label="Buscar" />
 
@@ -90,11 +90,11 @@ export default function Buscar(props) {
                                         <Card.Text className="bi bi-currency-euro"> Precio: {ruta.price}</Card.Text>
                                         <LinkAPerfil props={ruta} />
                                         {user == null &&
-                                            <Link href="/loginReact" className='btn btn-primary '>Reservar</Link>
+                                            <Link href="/loginReact" className='btn btn-primary my-3 '>Reservar</Link>
                                         }
                                         {user != null &&
                                             //<Reservar user={props.user} travel={ruta} />
-                                            <Link href={'/travel/show/' + ruta.id} class="btn btn-primary"> Reservar</Link>
+                                            <Link href={'/travel/show/' + ruta.id} class="btn btn-primary my-3"> Reservar</Link>
 
 
                                         }

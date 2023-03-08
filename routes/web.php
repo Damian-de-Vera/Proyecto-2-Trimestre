@@ -75,7 +75,12 @@ Route::get('/loginReact', function () {
 
 
 Route::get('/registerReact', function () {
-    return Inertia::render('RegisterPage');
+    $user = Auth::user();
+    if ($user != null) {
+        return back();
+    } else {
+        return Inertia::render('RegisterPage');
+    }
 });
 
 // User Management
