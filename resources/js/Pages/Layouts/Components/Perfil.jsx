@@ -4,7 +4,6 @@ import { router, usePage } from '@inertiajs/react'
 import CardUser from '@/Pages/Layouts/Components/CardUser';
 import Avatar from '@/Pages/Layouts/Components/Avatar';
 
-import 'react-toastify/dist/ReactToastify.css';
 
 function Perfil(props) {
     const { errors } = usePage().props
