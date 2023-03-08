@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('template_title')
-    Create User
+Crear Usuario
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create User</span>
+                        <span class="card-title">Crear Usuario</span>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Volver</a>
                         </div>
                     </div>
                     <div class="card-body">

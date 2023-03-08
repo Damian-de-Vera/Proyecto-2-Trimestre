@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('template_title')
-    {{ $user->name ?? 'Show User' }}
+    {{ $user->name ?? 'Usuario' }}
 @endsection
 
 @section('content')
@@ -10,10 +10,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show User</span>
+                            <span class="card-title">Usuario</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Volver</a>
                         </div>
                     </div>
 
@@ -21,7 +21,7 @@
                         
                         <div class="form-group">
                             <strong>Avatar:</strong>
-                      <img src="/storage/assets/img/{{ $user->avatar }}" alt="avatar">    
+                      <img src="/storage/assets/img/{{ $user->avatar }}" class="rounded img-fluid" width="300" height="250" alt="avatar">    
                         </div>
                         <div class="form-group">
                             <strong>Name:</strong>
