@@ -144,11 +144,14 @@ class UserController extends Controller
                 return back();
             }
         }
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
             'password' => ['required', 'max:255', 'min:9'],
             'password_confirmation' => ['required', 'max:255', 'min:9'],
+            'about_me' => ['max:30'],
+
 
 
         ]);

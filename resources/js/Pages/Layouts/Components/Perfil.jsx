@@ -16,7 +16,8 @@ function Perfil(props) {
         name: props.user.name,
         email: props.user.email,
         password: "",
-        password_confirmation: ""
+        password_confirmation: "",
+        about_me: props.user.about_me
     })
     const src = '/storage/assets/img/';
 
@@ -86,6 +87,8 @@ function Perfil(props) {
                                         </div>
                                     </div>
 
+
+
                                     <div class="row mb-3">
                                         <Form.Label for="password" class="col-md-4 col-form-label text-md-end">Contraseña</Form.Label>
                                         <div class="col-md-6">
@@ -103,6 +106,17 @@ function Perfil(props) {
                                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Control id="password_confirmation" value={values.password_confirmation} onChange={handleChange} type="password" class="form-control" name="password_confirmation" autocomplete="new-password" />
                                                 {errors.password_confirmation && <div><strong>{errors.password_confirmation}</strong></div>}
+                                            </Form.Group>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <Form.Label for="about_me" class="col-md-4 col-form-label text-md-end">Sobre mi</Form.Label>
+                                        <div class="col-md-6">
+                                            <Form.Group className="mb-3" >
+                                                <Form.Control id="about_me" value={values.about_me} onChange={handleChange} type="text" name="about_me" class="form-control" placeholder="Máximo 30 caracteres" />
+
+                                                {errors.about_me && <div><strong>{errors.about_me}</strong></div>}
                                             </Form.Group>
                                         </div>
                                     </div>
