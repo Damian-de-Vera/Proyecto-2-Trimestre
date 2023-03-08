@@ -58,8 +58,8 @@ class UserController extends Controller
 
         $user = User::create($request->all());
 
-        return redirect()->route('user.index')
-            ->with('success', 'User created successfully.');
+        return redirect()->route('users.index')
+            ->with('success', 'Usuario creado correctamente');
     }
 
     /**
@@ -120,7 +120,7 @@ class UserController extends Controller
         Ratings::create($request->all());
         $query = new UserQuery();
         $query->getUser($request->user1_id);
-        Session::flash('message', 'Usuario valorado!');
+        Session::flash('message', 'Usuario valorado');
 
         return back();
     }
@@ -140,7 +140,7 @@ class UserController extends Controller
         foreach ($xd as $i) {
 
             if ($request->email == $i && $request->email != Auth::user()->email) {
-                Session::flash('errormessage', 'Ese email ya existe!');
+                Session::flash('errormessage', 'Ese email ya existe');
                 return back();
             }
         }
@@ -157,7 +157,7 @@ class UserController extends Controller
         ]);
 
         if ($request->password != $request->password_confirmation) {
-            Session::flash('errormessage', 'La contraseña y su confirmación deben coincidir!');
+            Session::flash('errormessage', 'La contraseña y su confirmación deben coincidir');
             return back();
         }
         Session::flash('message', 'Perfil actualizado');
@@ -175,7 +175,7 @@ class UserController extends Controller
         $query = new UserQuery();
         if ($_FILES['avatar']['type'] == "image/jpeg" || $_FILES["avatar"]["type"] == "image/png" || $_FILES['avatar']['type'] == "image/jpg") {
             $query->updateAvatar($request, $currentUser);
-            Session::flash('message', 'Avatar actualizado!');
+            Session::flash('message', 'Avatar actualizado');
         } else {
             Session::flash('errormessage', 'Archivo inválido');
             return back();
@@ -193,6 +193,6 @@ class UserController extends Controller
         $user = User::find($id)->delete();
 
         return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully');
+            ->with('success', 'Usuario borrado correctamente');
     }
 }

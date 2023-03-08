@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('template_title')
-    Update User
+    Actualizar usuario
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update User</span>
+                        <span class="card-title">Actualizar usuario</span>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Volver</a>
                         </div>
                     </div>
                   

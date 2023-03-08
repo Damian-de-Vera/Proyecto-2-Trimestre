@@ -297,10 +297,7 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+      
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -310,7 +307,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'users/1',
+            'url'  => 'users/3',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],
