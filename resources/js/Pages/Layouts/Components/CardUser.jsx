@@ -90,8 +90,12 @@ function CardUser(props) {
             <Card>
                 <Card.Body className="my-4 text-center">
                     <Card.Title>
-                        <h4>Comentarios que la gente de  <strong>{props.props.userPerfil.name}</strong></h4>
+                        <h4>Comentarios que la gente sobre  <strong>{props.props.userPerfil.name}</strong></h4>
+                        {
 
+                            props.props.ratings[0].my_votes == 0 &&
+                            <div> No hay comentarios actualmente</div>
+                        }
                     </Card.Title>
 
 
