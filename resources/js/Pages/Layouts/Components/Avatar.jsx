@@ -14,7 +14,6 @@ function Avatar(props) {
     })
     const src = 'storage/assets/img/';
 
-    console.log(props.props.user);
 
     function previewFile(e) {
         const file = e.target.files[0];
