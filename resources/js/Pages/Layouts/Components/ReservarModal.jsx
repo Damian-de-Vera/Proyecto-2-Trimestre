@@ -11,7 +11,12 @@ function ReservarModal(props) {
     const { flash } = usePage().props
     return (
         <div className=" min-vh-100 my-4 container" >
-            <h2 className="text-center">Confirmar reserva</h2>
+            <Card>
+                <Card.Body>
+                    <Card.Title className='bg-gray text-center'>Confirmar Reserva</Card.Title>
+
+                </Card.Body>
+            </Card>
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -23,7 +28,7 @@ function ReservarModal(props) {
                     </div>
                 </div>
             )}
-            <div class="row "> <Card>
+            <div class="row  my-3"> <Card>
                 <Card.Body>
                     <Card.Title className='bg-gray'>{props.travel.origin} -{'>'} {props.travel.destination}</Card.Title>
                     <hr className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom' />
