@@ -71,7 +71,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-
+      
         return view('user.show', compact('user'));
     }
 
@@ -108,7 +108,7 @@ class UserController extends Controller
         }
 
         if ($user == Auth::user()) {
-            $ratings = $ratingsQuery->getAllMyVotes($user->id);
+            $ratings = $ratingsQuery->getAllById($user->id);
             return Inertia::render('PerfilPage', ['user' => Auth::user(), 'ratings' => $ratings]);
         } else {
             return Inertia::render('PerfilPage', ['userPerfil' => $user, 'user' => Auth::user(), 'userDiferente' => true, 'ratings' => $ratings]);

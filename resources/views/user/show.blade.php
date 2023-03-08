@@ -35,8 +35,6 @@
                             <strong>Admin:</strong>
                             {{ $user->admin }}
                         </div>
-                       
-
                     </div>
                 </div>
             </div>
