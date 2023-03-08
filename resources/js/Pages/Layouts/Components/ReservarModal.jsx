@@ -11,12 +11,18 @@ function ReservarModal(props) {
     const { flash } = usePage().props
     return (
         <div className=" min-vh-100 my-4 container" >
-            <Card>
-                <Card.Body>
-                    <Card.Title className='bg-gray text-center'>Confirmar Reserva</Card.Title>
+            {flash.errormessage && (
+                <div class="alert alert-danger py-3" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                    </svg>
+                    <div>
+                        {flash.errormessage}
 
-                </Card.Body>
-            </Card>
+                    </div>
+                </div>
+            )}
+
             {flash.message && (
                 <div class="alert alert-success d-flex align-items-center py-3" role="alert">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -28,6 +34,14 @@ function ReservarModal(props) {
                     </div>
                 </div>
             )}
+
+            <Card>
+                <Card.Body>
+                    <Card.Title className='bg-gray text-center'>Confirmar Reserva</Card.Title>
+
+                </Card.Body>
+            </Card>
+
             <div class="row  my-3"> <Card>
                 <Card.Body>
                     <Card.Title className='bg-gray'>{props.travel.origin} -{'>'} {props.travel.destination}</Card.Title>

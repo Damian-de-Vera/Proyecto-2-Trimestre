@@ -12,7 +12,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function Perfil(props) {
     const { errors } = usePage().props
     const { flash } = usePage().props
-    console.log(props);
     const [values, setForm] = useState({
         name: props.user.name,
         email: props.user.email,
@@ -124,14 +123,20 @@ function Perfil(props) {
                                 <Card.Title>
                                     <h4>Comentarios que la gente hace de ti</h4>
 
+                                    {
+
+                                        props.ratings[0].my_votes == 0 &&
+                                        <div> No hay comentarios actualmente</div>
+                                    }
                                 </Card.Title>
 
 
                             </Card.Body></Card>
                         {props.ratings[0].my_votes.map((user) => {
-
                             return (
-                                <div className="" >
+
+
+                                <div>
 
 
                                     <Card>
